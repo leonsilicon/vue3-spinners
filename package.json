@@ -1,5 +1,6 @@
 {
 	"name": "vue3-spinners-monorepo",
+	"private": true,
 	"scripts": {
 		"prepare": "lion-git-hooks",
 		"build": "pnpm run build --filter=./vue3-spinners",
