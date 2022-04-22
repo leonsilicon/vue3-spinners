@@ -14,7 +14,6 @@ export default function useSpinner(
 ) {
 	return {
 		cSize: computed(() => props.size),
-
 		classes: computed(() => 'q-spinner'),
 	};
 }

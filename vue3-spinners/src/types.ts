@@ -1,5 +1,3 @@
-import type { DefineComponent } from 'vue';
-
 import type { spinnerProps } from '~/utils/use-spinner.js';
 
 declare module '@vue/runtime-core' {
