@@ -1,0 +1,37 @@
+{
+	"name": "vue3-spinners",
+	"version": "0.0.1",
+	"description": "Spinners for Vue 3.",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/leonzalion/vue3-spinners.git"
+	},
+	"homepage": "https://github.com/leonzalion/vue3-spinners#readme",
+	"author": {
+		"name": "Leon Si",
+		"email": "contact@leonzalion.com",
+		"url": "https://leonzalion.com"
+	},
+	"type": "module",
+	"exports": "./src/index.ts",
+	"scripts": {
+		"release": "lionp",
+		"build": "node-ts ./scripts/build.ts",
+		"start": "node-ts ./src/index.ts",
+		"test": "vitest run",
+		"lint": "eslint --cache --fix .",
+		"prettier": "prettier --write .",
+		"tc": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"vitest": "^0.8.3",
+		"vue": "^3.2.33"
+	},
+	"peerDependencies": {
+		"vue": "^3"
+	},
+	"publishConfig": {
+		"directory": "dist"
+	}
+}
