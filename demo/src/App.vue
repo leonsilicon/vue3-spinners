@@ -1,18 +1,53 @@
 <script setup lang="ts">
+import {
+	VSpinner,
+	VSpinnerAudio,
+	VSpinnerBall,
+	VSpinnerBars,
+	VSpinnerBox,
+	VSpinnerClock,
+	VSpinnerComment,
+	VSpinnerCore,
+	VSpinnerDots,
+	VSpinnerFacebook,
+	VSpinnerGears,
+	VSpinnerGrid,
+	VSpinnerHearts,
+	VSpinnerHourglass,
+	VSpinnerInfinity,
+	VSpinnerIos,
+	VSpinnerOrbit,
+	VSpinnerOval,
+	VSpinnerPie,
+	VSpinnerPuff,
+	VSpinnerRadio,
+	VSpinnerRings,
+	VSpinnerTail,
+} from 'vue3-spinners';
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+	<VSpinner />
+	<VSpinnerAudio />
+	<VSpinnerBall />
+	<VSpinnerBars />
+	<VSpinnerBox />
+	<VSpinnerClock />
+	<VSpinnerComment />
+	<VSpinnerCore />
+	<VSpinnerDots />
+	<VSpinnerFacebook />
+	<VSpinnerGears />
+	<VSpinnerGrid />
+	<VSpinnerHearts />
+	<VSpinnerHourglass />
+	<VSpinnerInfinity />
+	<VSpinnerIos />
+	<VSpinnerOrbit />
+	<VSpinnerOval />
+	<VSpinnerPie />
+	<VSpinnerPuff />
+	<VSpinnerRadio />
+	<VSpinnerRings />
+	<VSpinnerTail />
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
