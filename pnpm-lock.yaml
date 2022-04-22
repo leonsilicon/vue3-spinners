@@ -22,20 +22,16 @@ importers:
 
   demo:
     specifiers:
-      '@ckpack/vue-color': ^1.1.9
       '@vitejs/plugin-vue': ^2.3.1
       typescript: ^4.6.3
       vite: ^2.9.5
       vite-plugin-windicss: ^1.8.4
       vue: ^3.2.25
-      vue-accessible-color-picker: ^4.0.0
       vue-tsc: ^0.34.7
       vue3-spinners: link:../vue3-spinners/dist
       windicss: ^3.5.1
     dependencies:
-      '@ckpack/vue-color': 1.1.9_vue@3.2.33
       vue: 3.2.33
-      vue-accessible-color-picker: 4.0.0_vue@3.2.33
       vue3-spinners: link:../vue3-spinners/dist
       windicss: 3.5.1
     devDependencies:
@@ -86,18 +82,6 @@ packages:
     resolution: {integrity: sha512-vqUSBLP8dQHFPdPi9bc5GK9vRkYHJ49fsZdtoJ8EQ8ibpwk5rPKfvNIwChB0KVXcIjcepEBBd2VHC5r9Gy8ueg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
-
-  /@ckpack/vue-color/1.1.9_vue@3.2.33:
-    resolution: {integrity: sha512-YBEg7SMlIxrc7Uc7pLhqR3FMDzkhxoY2xclMWWkO6+CDf7wwx9Wqh9nxRiaMqiPGcClqFDWiTgr1Z034sAcjpw==}
-    engines: {node: '>=12'}
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      '@ctrl/tinycolor': 3.4.1
-      lodash-es: 4.17.21
-      material-colors: 1.2.6
-      vue: 3.2.33
-    dev: false
 
   /@commitlint/cli/16.2.3_@swc+core@1.2.171:
     resolution: {integrity: sha512-VsJBQLvhhlOgEfxs/Z5liYuK0dXqLE5hz1VJzLBxiOxG31kL/X5Q4OvK292BmO7IGZcm1yJE3XQPWSiFaEHbWA==}
@@ -269,11 +253,6 @@ packages:
     dependencies:
       '@cspotcode/source-map-consumer': 0.8.0
     dev: true
-
-  /@ctrl/tinycolor/3.4.1:
-    resolution: {integrity: sha512-ej5oVy6lykXsvieQtqZxCOaLT+xD4+QNarq78cIYISHmZXshCvROLudpQN3lfL8G0NL7plMSSK+zlyvCaIJ4Iw==}
-    engines: {node: '>=10'}
-    dev: false
 
   /@eslint/eslintrc/1.2.1:
     resolution: {integrity: sha512-bxvbYnBPN1Gibwyp6NrpnFzA3YtRL3BBAyEAFVIpNTm2Rn4Vy87GA5M4aSn3InRrlsbX5N0GW7XIx+U4SAEKdQ==}
@@ -3743,6 +3722,7 @@ packages:
 
   /lodash-es/4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: true
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -3885,10 +3865,6 @@ packages:
     dependencies:
       markdown-it: 12.3.2
     dev: true
-
-  /material-colors/1.2.6:
-    resolution: {integrity: sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==}
-    dev: false
 
   /mdurl/1.0.1:
     resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=}
@@ -5459,14 +5435,6 @@ packages:
       - sass
       - stylus
     dev: true
-
-  /vue-accessible-color-picker/4.0.0_vue@3.2.33:
-    resolution: {integrity: sha512-DcgEZzZp5xw/7bwU6cn7KYY5duRpaiHCMQ1kjGPhAt1P4hlgNWnKbexQgQBkGL2Xc+P2gwJaLNEC1lHTH5uwRA==}
-    peerDependencies:
-      vue: ^3.2.x
-    dependencies:
-      vue: 3.2.33
-    dev: false
 
   /vue-eslint-parser/8.3.0_eslint@8.13.0:
     resolution: {integrity: sha512-dzHGG3+sYwSf6zFBa0Gi9ZDshD7+ad14DGOdTLjruRVgZXe2J+DcZ9iUhyR48z5g1PqRa20yt3Njna/veLJL/g==}
