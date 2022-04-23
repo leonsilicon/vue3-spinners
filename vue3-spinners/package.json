@@ -18,6 +18,23 @@
 		".": "./src/index.ts",
 		"./spinners.css": "./spinners.css"
 	},
+	"keywords": [
+		"vue-spinners",
+    "vue-spinner",
+    "spinner-vue",
+    "spinners",
+    "spinner",
+    "loaders",
+    "loader",
+    "loading",
+    "loading spinners",
+    "loading spinner",
+    "progress",
+    "vue",
+    "vuejs",
+    "svg",
+    "css"
+	],
 	"scripts": {
 		"preinstall": "pnpm build",
 		"release": "lionp",
