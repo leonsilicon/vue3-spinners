@@ -12,8 +12,6 @@ Online demo: <https://leonzalion.github.io/vue3-spinners>
   <img src="/assets/spinners.gif" />
 </p>
 
-> The actual spinner animations are way smoother, it's just that the GIF format limits the FPS. Check out the [online demo](https://leonzalion.github.io/vue3-spinners) to see them in action!
-
 ## Installation
 
 ```shell
