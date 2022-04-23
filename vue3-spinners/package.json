@@ -14,7 +14,9 @@
 		"url": "https://leonzalion.com"
 	},
 	"type": "module",
-	"exports": "./src/index.ts",
+	"exports": {
+		"./*": "./*"
+	},
 	"scripts": {
 		"preinstall": "pnpm build",
 		"release": "lionp",
