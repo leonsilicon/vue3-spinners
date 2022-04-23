@@ -24,15 +24,85 @@ import 'vue3-spinners/spinners.css';
 
 ```vue
 <script>
-import { VSpinner } from 'vue3-spinners';
+import {
+  VSpinner,
+  VSpinnerAudio,
+  VSpinnerBall,
+  VSpinnerBars,
+  VSpinnerBox,
+  VSpinnerClock,
+  VSpinnerComment,
+  VSpinnerCore,
+  VSpinnerDots,
+  VSpinnerFacebook,
+  VSpinnerGears,
+  VSpinnerGrid,
+  VSpinnerHearts,
+  VSpinnerHourglass,
+  VSpinnerInfinity,
+  VSpinnerIos,
+  VSpinnerOrbit,
+  VSpinnerOval,
+  VSpinnerPie,
+  VSpinnerPuff,
+  VSpinnerRadio,
+  VSpinnerRings,
+  VSpinnerTail,
+} from 'vue3-spinners';
 
 export default {
-  components: { VSpinner }
+  components: {
+    VSpinner,
+    VSpinnerAudio,
+    VSpinnerBall,
+    VSpinnerBars,
+    VSpinnerBox,
+    VSpinnerClock,
+    VSpinnerComment,
+    VSpinnerCore,
+    VSpinnerDots,
+    VSpinnerFacebook,
+    VSpinnerGears,
+    VSpinnerGrid,
+    VSpinnerHearts,
+    VSpinnerHourglass,
+    VSpinnerInfinity,
+    VSpinnerIos,
+    VSpinnerOrbit,
+    VSpinnerOval,
+    VSpinnerPie,
+    VSpinnerPuff,
+    VSpinnerRadio,
+    VSpinnerRings,
+    VSpinnerTail,
+  },
 };
 </script>
 
 <template>
-  <v-spinner size='20' />
+  <VSpinner size='20' color='red' />
+  <VSpinnerAudio >
+  <VSpinnerBall />
+  <VSpinnerBars />
+  <VSpinnerBox />
+  <VSpinnerClock />
+  <VSpinnerComment />
+  <VSpinnerCore />
+  <VSpinnerDots />
+  <VSpinnerFacebook />
+  <VSpinnerGears />
+  <VSpinnerGrid />
+  <VSpinnerHearts />
+  <VSpinnerHourglass />
+  <VSpinnerInfinity />
+  <VSpinnerIos />
+  <VSpinnerOrbit />
+  <VSpinnerOval />
+  <VSpinnerPie />
+  <VSpinnerPuff />
+  <VSpinnerRadio />
+  <VSpinnerRings />
+  <VSpinnerTail />
 </template>
 ```
 
@@ -40,11 +110,57 @@ Using `<script setup>` (recommended):
 
 ```vue
 <script setup>
-import { VSpinner } from 'vue3-spinners';
+import {
+  VSpinner,
+  VSpinnerAudio,
+  VSpinnerBall,
+  VSpinnerBars,
+  VSpinnerBox,
+  VSpinnerClock,
+  VSpinnerComment,
+  VSpinnerCore,
+  VSpinnerDots,
+  VSpinnerFacebook,
+  VSpinnerGears,
+  VSpinnerGrid,
+  VSpinnerHearts,
+  VSpinnerHourglass,
+  VSpinnerInfinity,
+  VSpinnerIos,
+  VSpinnerOrbit,
+  VSpinnerOval,
+  VSpinnerPie,
+  VSpinnerPuff,
+  VSpinnerRadio,
+  VSpinnerRings,
+  VSpinnerTail,
+} from 'vue3-spinners';
 </script>
 
-<template>
-  <v-spinner size='20' />
+<template
+  <VSpinner size='20' color='red' />
+  <VSpinnerAudio />
+  <VSpinnerBall />
+  <VSpinnerBars />
+  <VSpinnerBox />
+  <VSpinnerClock />
+  <VSpinnerComment />
+  <VSpinnerCore />
+  <VSpinnerDots />
+  <VSpinnerFacebook />
+  <VSpinnerGears />
+  <VSpinnerGrid />
+  <VSpinnerHearts />
+  <VSpinnerHourglass />
+  <VSpinnerInfinity />
+  <VSpinnerIos />
+  <VSpinnerOrbit />
+  <VSpinnerOval />
+  <VSpinnerPie />
+  <VSpinnerPuff />
+  <VSpinnerRadio />
+  <VSpinnerRings />
+  <VSpinnerTail />
 </template>
 ```
 
