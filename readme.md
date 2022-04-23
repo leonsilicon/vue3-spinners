@@ -1,5 +1,7 @@
 # vue3-spinners
 
+[![npm version](https://img.shields.io/npm/v/vue3-spinners)](https://npmjs.com/package/vue3-spinners)
+
 Spinner components for Vue 3.
 
 These components were exported from Quasar's spinner components (<https://quasar.dev/vue-components/spinners>), so thank you to the Quasar team for making such an amazing UI library!
