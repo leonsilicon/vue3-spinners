@@ -130,6 +130,18 @@ import {
 </template>
 ```
 
+If you want the spinners to be available globally without needing to import them, add the following to your app's entrypoint:
+
+```typescript
+import { createApp } from 'vue';
+import App from './app.vue';
+import { VueSpinnersPlugin } from 'vue3-spinners';
+
+const app = createApp(App);
+app.use(VueSpinnersPlugin);
+// ...
+```
+
 ## Props
 
 ### size
