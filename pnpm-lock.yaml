@@ -9,7 +9,7 @@ importers:
       desm: ^1.2.0
       eslint-define-config: ^1.4.0
       execa: ^6.1.0
-      lion-system: ^1.3.15
+      lion-system: ^1.3.16
       typescript: ^4.6.3
     devDependencies:
       '@leonzalion/configs': 1.2.25_typescript@4.6.3
@@ -17,7 +17,7 @@ importers:
       desm: 1.2.0
       eslint-define-config: 1.4.0
       execa: 6.1.0
-      lion-system: 1.3.15_typescript@4.6.3
+      lion-system: 1.3.16_typescript@4.6.3
       typescript: 4.6.3
 
   demo:
@@ -314,7 +314,7 @@ packages:
       is-ci: 3.0.1
       lint-staged: 12.4.0
       lion-git-hooks: 1.0.9
-      lion-system: 1.3.15_typescript@4.6.3
+      lion-system: 1.3.16_typescript@4.6.3
       lionp: 1.0.24_typescript@4.6.3
       log-symbols: 5.1.0
       markdownlint-cli: 0.31.1
@@ -3586,8 +3586,8 @@ packages:
       pkg-dir: 6.0.1
     dev: true
 
-  /lion-system/1.3.15_typescript@4.6.3:
-    resolution: {integrity: sha512-6TZ46JEYc5rbBeJXwR2NLOBrjK9KG7gIsLjgiZ7JpzzuXqNnmBSt/c8U0XVzkt9wuyrJtXG942xONNNFspyUBg==}
+  /lion-system/1.3.16_typescript@4.6.3:
+    resolution: {integrity: sha512-0oMV3S5XL0l6YDTMU0AGotW92/pOFlj2/S7A2JSZsHIBd6ilRcmghhYfLywQr7fU8wRiNek4xkfNA7PwluPDSg==}
     dependencies:
       '@rollup/plugin-commonjs': 21.1.0_rollup@2.70.2
       '@rollup/plugin-json': 4.1.0_rollup@2.70.2
@@ -3625,7 +3625,7 @@ packages:
       is-interactive: 2.0.0
       is-scoped: 3.0.0
       issue-regex: 4.0.0
-      lion-system: 1.3.15_typescript@4.6.3
+      lion-system: 1.3.16_typescript@4.6.3
       listr2: 4.0.5_enquirer@2.3.6
       log-symbols: 5.1.0
       meow: 10.1.2

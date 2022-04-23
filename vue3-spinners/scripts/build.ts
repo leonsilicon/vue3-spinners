@@ -5,4 +5,7 @@ chProjectDir(import.meta.url);
 rmDist();
 exec('tsc');
 exec('tsc-alias');
-await copyPackageFiles({ additionalFiles: ['src/spinner.css'] });
+await copyPackageFiles({
+	additionalFiles: ['src/spinners.css'],
+	commonjs: { external: /\/vue\// },
+});
