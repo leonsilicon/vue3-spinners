@@ -4,6 +4,8 @@ Spinner components for Vue 3.
 
 These components were exported from Quasar's spinner components (<https://quasar.dev/vue-components/spinners>), so thank you to the Quasar team for making such an amazing UI library!
 
+Online demo: <https://leonzalion.github.io/vue3-spinners>
+
 ## Installation
 
 ```shell
