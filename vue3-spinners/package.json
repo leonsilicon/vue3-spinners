@@ -16,7 +16,7 @@
 	"type": "module",
 	"exports": {
 		".": "./src/index.ts",
-		"./*": "./*"
+		"./spinners.css": "./spinners.css"
 	},
 	"scripts": {
 		"preinstall": "pnpm build",
