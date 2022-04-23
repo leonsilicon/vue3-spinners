@@ -139,7 +139,7 @@ import {
 } from 'vue3-spinners';
 </script>
 
-<template
+<template>
   <VSpinner size='20' color='red' />
   <VSpinnerAudio />
   <VSpinnerBall />
