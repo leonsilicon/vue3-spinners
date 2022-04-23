@@ -6,6 +6,10 @@ These components were exported from Quasar's spinner components (<https://quasar
 
 Online demo: <https://leonzalion.github.io/vue3-spinners>
 
+![A GIF of spinners](assets/spinners.gif)
+
+> The actual spinner animations are way smoother, it's just that the GIF format limits the FPS. Check out the [online demo](https://leonzalion.github.io/vue3-spinners) to see them in action!
+
 ## Installation
 
 ```shell
