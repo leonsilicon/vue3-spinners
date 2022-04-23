@@ -6,6 +6,7 @@
 		"prepare": "lion-git-hooks",
 		"build": "pnpm run build --filter=./vue3-spinners",
 		"build:demo": "pnpm run build --filter=./demo",
+		"dev:demo": "pnpm run dev --filter=./demo",
 		"lint": "pnpm recursive run lint",
 		"prettier": "pnpm recursive run prettier",
 		"tc": "pnpm recursive run tc"

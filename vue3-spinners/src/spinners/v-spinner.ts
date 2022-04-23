@@ -21,7 +21,7 @@ export default defineComponent({
 			h(
 				'svg',
 				{
-					class: classes.value + ' q-spinner-mat',
+					class: classes.value + ' v-spinner-mat',
 					width: cSize.value,
 					height: cSize.value,
 					viewBox: '25 25 50 50',

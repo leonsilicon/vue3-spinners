@@ -5,4 +5,4 @@ chProjectDir(import.meta.url);
 rmDist();
 exec('tsc');
 exec('tsc-alias');
-await copyPackageFiles();
+await copyPackageFiles({ additionalFiles: ['src/spinner.css'] });

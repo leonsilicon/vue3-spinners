@@ -1,19 +1,19 @@
-.q-spinner {
+.v-spinner {
 	vertical-align: middle;
 }
 
-.q-spinner-mat {
-	animation: q-spin 2s linear infinite;
+.v-spinner-mat {
+	animation: v-spin 2s linear infinite;
 	transform-origin: center center;
 }
 
-.q-spinner-mat.path {
+.v-spinner-mat .path {
 	stroke-dasharray: 1, 200;
 	stroke-dashoffset: 0;
-	animation: q-mat-dash 1.5s ease-in-out infinite;
+	animation: v-mat-dash 1.5s ease-in-out infinite;
 }
 
-@keyframes q-spin {
+@keyframes v-spin {
 	0% {
 		transform: rotate3d(0, 0, 1, 0deg);
 	}
@@ -31,7 +31,7 @@
 	}
 }
 
-@keyframes q-mat-dash {
+@keyframes v-mat-dash {
 	0% {
 		stroke-dasharray: 1, 200;
 		stroke-dashoffset: 0;
