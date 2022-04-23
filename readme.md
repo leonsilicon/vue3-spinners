@@ -33,84 +33,84 @@ Then, import the spinners in your Vue component:
 ```vue
 <script>
 import {
-  VSpinner,
-  VSpinnerAudio,
-  VSpinnerBall,
-  VSpinnerBars,
-  VSpinnerBox,
-  VSpinnerClock,
-  VSpinnerComment,
-  VSpinnerCore,
-  VSpinnerDots,
-  VSpinnerFacebook,
-  VSpinnerGears,
-  VSpinnerGrid,
-  VSpinnerHearts,
-  VSpinnerHourglass,
-  VSpinnerInfinity,
-  VSpinnerIos,
-  VSpinnerOrbit,
-  VSpinnerOval,
-  VSpinnerPie,
-  VSpinnerPuff,
-  VSpinnerRadio,
-  VSpinnerRings,
-  VSpinnerTail,
+  VueSpinner,
+  VueSpinnerAudio,
+  VueSpinnerBall,
+  VueSpinnerBars,
+  VueSpinnerBox,
+  VueSpinnerClock,
+  VueSpinnerComment,
+  VueSpinnerCore,
+  VueSpinnerDots,
+  VueSpinnerFacebook,
+  VueSpinnerGears,
+  VueSpinnerGrid,
+  VueSpinnerHearts,
+  VueSpinnerHourglass,
+  VueSpinnerInfinity,
+  VueSpinnerIos,
+  VueSpinnerOrbit,
+  VueSpinnerOval,
+  VueSpinnerPie,
+  VueSpinnerPuff,
+  VueSpinnerRadio,
+  VueSpinnerRings,
+  VueSpinnerTail,
 } from 'vue3-spinners';
 
 export default {
   components: {
-    VSpinner,
-    VSpinnerAudio,
-    VSpinnerBall,
-    VSpinnerBars,
-    VSpinnerBox,
-    VSpinnerClock,
-    VSpinnerComment,
-    VSpinnerCore,
-    VSpinnerDots,
-    VSpinnerFacebook,
-    VSpinnerGears,
-    VSpinnerGrid,
-    VSpinnerHearts,
-    VSpinnerHourglass,
-    VSpinnerInfinity,
-    VSpinnerIos,
-    VSpinnerOrbit,
-    VSpinnerOval,
-    VSpinnerPie,
-    VSpinnerPuff,
-    VSpinnerRadio,
-    VSpinnerRings,
-    VSpinnerTail,
+    VueSpinner,
+    VueSpinnerAudio,
+    VueSpinnerBall,
+    VueSpinnerBars,
+    VueSpinnerBox,
+    VueSpinnerClock,
+    VueSpinnerComment,
+    VueSpinnerCore,
+    VueSpinnerDots,
+    VueSpinnerFacebook,
+    VueSpinnerGears,
+    VueSpinnerGrid,
+    VueSpinnerHearts,
+    VueSpinnerHourglass,
+    VueSpinnerInfinity,
+    VueSpinnerIos,
+    VueSpinnerOrbit,
+    VueSpinnerOval,
+    VueSpinnerPie,
+    VueSpinnerPuff,
+    VueSpinnerRadio,
+    VueSpinnerRings,
+    VueSpinnerTail,
   },
 };
 </script>
 
 <template>
-  <VSpinner size='20' color='red' />
-  <VSpinnerAudio >
-  <VSpinnerBall />
-  <VSpinnerBars />
-  <VSpinnerBox />
-  <VSpinnerClock />
-  <VSpinnerComment />
-  <VSpinnerCore />
-  <VSpinnerDots />
-  <VSpinnerFacebook />
-  <VSpinnerGears />
-  <VSpinnerGrid />
-  <VSpinnerHearts />
-  <VSpinnerHourglass />
-  <VSpinnerInfinity />
-  <VSpinnerIos />
-  <VSpinnerOrbit />
-  <VSpinnerOval />
-  <VSpinnerPie />
-  <VSpinnerPuff />
-  <VSpinnerRadio />
-  <VSpinnerRings />
-  <VSpinnerTail />
+  <VueSpinner size='20' color='red' />
+  <VueSpinnerAudio >
+  <VueSpinnerBall />
+  <VueSpinnerBars />
+  <VueSpinnerBox />
+  <VueSpinnerClock />
+  <VueSpinnerComment />
+  <VueSpinnerCore />
+  <VueSpinnerDots />
+  <VueSpinnerFacebook />
+  <VueSpinnerGears />
+  <VueSpinnerGrid />
+  <VueSpinnerHearts />
+  <VueSpinnerHourglass />
+  <VueSpinnerInfinity />
+  <VueSpinnerIos />
+  <VueSpinnerOrbit />
+  <VueSpinnerOval />
+  <VueSpinnerPie />
+  <VueSpinnerPuff />
+  <VueSpinnerRadio />
+  <VueSpinnerRings />
+  <VueSpinnerTail />
 </template>
 ```
 
@@ -119,56 +119,14 @@ Using `<script setup>` (recommended):
 ```vue
 <script setup>
 import {
-  VSpinner,
-  VSpinnerAudio,
-  VSpinnerBall,
-  VSpinnerBars,
-  VSpinnerBox,
-  VSpinnerClock,
-  VSpinnerComment,
-  VSpinnerCore,
-  VSpinnerDots,
-  VSpinnerFacebook,
-  VSpinnerGears,
-  VSpinnerGrid,
-  VSpinnerHearts,
-  VSpinnerHourglass,
-  VSpinnerInfinity,
-  VSpinnerIos,
-  VSpinnerOrbit,
-  VSpinnerOval,
-  VSpinnerPie,
-  VSpinnerPuff,
-  VSpinnerRadio,
-  VSpinnerRings,
-  VSpinnerTail,
+  VueSpinner,
+  // ...
 } from 'vue3-spinners';
 </script>
 
 <template>
-  <VSpinner size="20" color="red" />
-  <VSpinnerAudio />
-  <VSpinnerBall />
-  <VSpinnerBars />
-  <VSpinnerBox />
-  <VSpinnerClock />
-  <VSpinnerComment />
-  <VSpinnerCore />
-  <VSpinnerDots />
-  <VSpinnerFacebook />
-  <VSpinnerGears />
-  <VSpinnerGrid />
-  <VSpinnerHearts />
-  <VSpinnerHourglass />
-  <VSpinnerInfinity />
-  <VSpinnerIos />
-  <VSpinnerOrbit />
-  <VSpinnerOval />
-  <VSpinnerPie />
-  <VSpinnerPuff />
-  <VSpinnerRadio />
-  <VSpinnerRings />
-  <VSpinnerTail />
+  <VueSpinner size="20" color="red" />
+  <!-- ... -->
 </template>
 ```
 

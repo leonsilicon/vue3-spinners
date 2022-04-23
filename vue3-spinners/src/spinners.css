@@ -1,13 +1,13 @@
-.v-spinner {
+.vue-spinner {
 	vertical-align: middle;
 }
 
-.v-spinner-mat {
+.vue-spinner-mat {
 	animation: v-spin 2s linear infinite;
 	transform-origin: center center;
 }
 
-.v-spinner-mat .path {
+.vue-spinner-mat .path {
 	stroke-dasharray: 1, 200;
 	stroke-dashoffset: 0;
 	animation: v-mat-dash 1.5s ease-in-out infinite;

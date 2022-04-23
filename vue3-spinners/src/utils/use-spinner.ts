@@ -14,6 +14,6 @@ export default function useSpinner(
 ) {
 	return {
 		cSize: computed(() => props.size),
-		classes: computed(() => 'v-spinner'),
+		classes: computed(() => 'vue-spinner'),
 	};
 }
