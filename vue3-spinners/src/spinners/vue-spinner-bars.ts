@@ -144,7 +144,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerBars',
+	name: 'VueSpinnerBars',
 
 	props: spinnerProps,
 

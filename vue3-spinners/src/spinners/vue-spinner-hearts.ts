@@ -43,7 +43,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerHearts',
+	name: 'VueSpinnerHearts',
 
 	props: spinnerProps,
 

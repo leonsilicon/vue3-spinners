@@ -28,7 +28,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerInfinity',
+	name: 'VueSpinnerInfinity',
 
 	props: spinnerProps,
 

@@ -61,7 +61,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerClock',
+	name: 'VueSpinnerClock',
 	props: spinnerProps,
 	setup(props) {
 		const { cSize, classes } = useSpinner(props);

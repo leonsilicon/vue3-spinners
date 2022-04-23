@@ -109,7 +109,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerHourglass',
+	name: 'VueSpinnerHourglass',
 
 	props: spinnerProps,
 

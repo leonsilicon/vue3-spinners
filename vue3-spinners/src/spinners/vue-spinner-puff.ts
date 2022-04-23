@@ -76,7 +76,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerPuff',
+	name: 'VueSpinnerPuff',
 
 	props: spinnerProps,
 

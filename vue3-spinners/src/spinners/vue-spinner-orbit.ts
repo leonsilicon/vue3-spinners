@@ -36,7 +36,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerOrbit',
+	name: 'VueSpinnerOrbit',
 
 	props: spinnerProps,
 

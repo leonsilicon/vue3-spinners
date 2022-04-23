@@ -103,7 +103,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerRings',
+	name: 'VueSpinnerRings',
 
 	props: spinnerProps,
 

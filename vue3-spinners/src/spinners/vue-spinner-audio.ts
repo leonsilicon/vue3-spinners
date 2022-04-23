@@ -90,7 +90,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerAudio',
+	name: 'VueSpinnerAudio',
 	props: spinnerProps,
 	setup(props) {
 		const { cSize, classes } = useSpinner(props);

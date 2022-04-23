@@ -169,7 +169,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerGrid',
+	name: 'VueSpinnerGrid',
 
 	props: spinnerProps,
 

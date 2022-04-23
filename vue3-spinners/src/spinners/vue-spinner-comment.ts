@@ -77,7 +77,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerComment',
+	name: 'VueSpinnerComment',
 
 	props: spinnerProps,
 

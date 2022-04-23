@@ -207,7 +207,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerIos',
+	name: 'VueSpinnerIos',
 
 	props: spinnerProps,
 

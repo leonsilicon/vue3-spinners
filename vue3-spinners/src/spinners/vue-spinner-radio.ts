@@ -73,7 +73,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerRadio',
+	name: 'VueSpinnerRadio',
 
 	props: spinnerProps,
 

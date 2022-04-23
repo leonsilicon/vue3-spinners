@@ -101,7 +101,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerBall',
+	name: 'VueSpinnerBall',
 	props: spinnerProps,
 	setup(props) {
 		const { cSize, classes } = useSpinner(props);

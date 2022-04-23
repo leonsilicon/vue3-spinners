@@ -108,7 +108,7 @@ const svg = [
 ];
 
 export default defineComponent({
-	name: 'VSpinnerFacebook',
+	name: 'VueSpinnerFacebook',
 
 	props: spinnerProps,
 
