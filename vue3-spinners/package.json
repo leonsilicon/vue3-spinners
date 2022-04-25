@@ -55,5 +55,9 @@
 	},
 	"publishConfig": {
 		"directory": "dist"
+	},
+	"dependencies": {
+		"just-range": "^4.0.1",
+		"just-zip-it": "^3.0.2"
 	}
 }

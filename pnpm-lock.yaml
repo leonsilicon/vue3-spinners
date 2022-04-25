@@ -44,8 +44,13 @@ importers:
   vue3-spinners:
     specifiers:
       '@vue/runtime-core': ^3.2.33
+      just-range: ^4.0.1
+      just-zip-it: ^3.0.2
       vitest: ^0.8.3
       vue: ^3.2.33
+    dependencies:
+      just-range: 4.0.1
+      just-zip-it: 3.0.2
     devDependencies:
       '@vue/runtime-core': 3.2.33
       vitest: 0.8.5
@@ -3488,6 +3493,14 @@ packages:
     resolution: {integrity: sha1-P02uSpH6wxX3EGL4UhzCOfE2YoA=}
     engines: {'0': node >= 0.2.0}
     dev: true
+
+  /just-range/4.0.1:
+    resolution: {integrity: sha512-95Nge5VEn5QiwASJa4QlCLUSyG0QpHwHmhFQUN0Qg5nazqWkxzbVvcEY0xr4ZqXzOlJAQK0KDCVjF0EmseHNXA==}
+    dev: false
+
+  /just-zip-it/3.0.2:
+    resolution: {integrity: sha512-JhnDos0Qv+wDBImi94AG9SKXQqvdWPI95NNRuSMwA56qjyBEmo8hgW4BxeiwU3RSnjH7pQ6D36MzvFVWeLrtsg==}
+    dev: false
 
   /keyv/3.1.0:
     resolution: {integrity: sha512-9ykJ/46SN/9KPM/sichzQ7OvXyGDYKGTaDlKMGCAlg2UK8KRy4jb0d8sFc+0Tt0YYnThq8X2RZgCg74RPxgcVA==}
