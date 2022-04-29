@@ -1,14 +1,27 @@
-import styled, { keyframes } from 'vue-emotion'
-import { calculateRgba, range } from '../utils'
+<template>
+</template>
+
+<script setup lang='ts'>
+const { color = '#000000', size = 50 } = defineProps<{
+	color: string;
+	size: number;
+}>();
 
 const thickness = size => size / 5
 const lat = size => (size - thickness(size)) / 2
 const offset = size => lat(size) - thickness(size)
 const getColor = color => calculateRgba(color, 0.75)
 
-const before = (size, sizeUnit, color) => keyframes`
-  0% {width: ${thickness(size)}px;box-shadow: ${lat(size)}px ${-offset(
-  size
+</script>
+
+<style scoped>
+@keyframes before {
+  0% {
+  width: v-bind('thickness(size)');
+  box-shadow: v-bind('lat(size)') v-bind('-offset(size)') v-bind('getColor(color)'), v-bind('-lat(size)') v-bind('offset(size')
+	}
+}
+</style>
 )}px ${getColor(color)}, ${-lat(size)}px ${offset(size)}px ${getColor(color)}}
   35% {width: ${`${size}${sizeUnit}`};box-shadow: 0 ${-offset(
   size
@@ -19,6 +32,10 @@ const before = (size, sizeUnit, color) => keyframes`
   100% {box-shadow: ${lat(size)}px ${-offset(size)}px ${getColor(
   color
 )}, ${-lat(size)}px ${offset(size)}px ${getColor(color)}}
+}
+</style>
+
+const before = (size, sizeUnit, color) => keyframes`
 `
 
 const after = (size, sizeUnit, color) => keyframes`
@@ -60,8 +77,6 @@ export const HashLoader = {
   functional: true,
   props: {
     loading: { type: Boolean, default: true },
-    color: { type: String, default: `#000000` },
-    size: { type: Number, default: 50 },
     sizeUnit: { type: String, default: `px` }
   },
   render(h, { props, data }) {
