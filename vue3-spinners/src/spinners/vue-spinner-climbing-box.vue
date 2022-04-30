@@ -8,10 +8,9 @@
 </template>
 
 <script setup lang="ts">
-const { color = `#000000`, size = 15 } = defineProps<{
-	color: string;
-	size: number;
-}>();
+import { useSpinnerProps } from '~/utils/props.js';
+
+const { color, size } = defineProps(useSpinnerProps({ size: 15 }));
 </script>
 
 <style scoped>

@@ -5,13 +5,15 @@
 </template>
 
 <script setup lang="ts">
-const { size = 50, color = `#000000` } = defineProps<{
-	size: number;
-	color: string;
-}>();
+import { useSpinnerProps } from '~/utils/props.js';
+import { useSize } from '~/utils/size.js';
+
+const { size, color } = defineProps(useSpinnerProps({ size: 50 }));
+const { unit, value } = $(useSize(() => size));
+
 const getRingStyle = (version: number) => ({
-	height: size * (1 - version / 10),
-	width: size * (1 - version / 10),
+	height: `${value * (1 - version / 10)}${unit}`,
+	width: `${value * (1 - version / 10)}${unit}`,
 	top: `${version * 0.7 * 2.5}%`,
 	left: `${version * 0.35 * 2.5}%`,
 	animation: `circle 1s ${version * 0.2}s infinite linear`,

@@ -46,6 +46,7 @@
 		"tc": "tsc --noEmit"
 	},
 	"devDependencies": {
+		"@types/parse-unit": "^1.0.1",
 		"@vue/runtime-core": "^3.2.33",
 		"vitest": "^0.8.3",
 		"vue": "^3.2.33"
@@ -58,6 +59,7 @@
 	},
 	"dependencies": {
 		"just-range": "^4.0.1",
-		"just-zip-it": "^3.0.2"
+		"just-zip-it": "^3.0.2",
+		"parse-unit": "^1.0.1"
 	}
 }

@@ -1,32 +1,35 @@
-export const calculateRgba = (input, opacity) => {
-  let color
-  if (input[0] === `#`) {
-    color = input.slice(1)
-  }
+export const calculateRgba = (input: string, opacity: number) => {
+	let color = '';
 
-  if (color.length === 3) {
-    let res = ``
-    color.split(``).forEach(c => {
-      res += c
-      res += c
-    })
-    color = res
-  }
+	if (input.startsWith(`#`)) {
+		color = input.slice(1);
+	}
 
-  const rgbValues = color
-    .match(/.{2}/g)
-    .map(hex => parseInt(hex, 16))
-    .join(`, `)
-  return `rgba(${rgbValues}, ${opacity})`
-}
+	if (color.length === 3) {
+		let res = '';
+		for (const c of color) {
+			res += c;
+			res += c;
+		}
 
-export const range = (size, startAt = 0) =>
-  [...Array(size).keys()].map(i => i + startAt)
+		color = res;
+	}
 
-export const characterRange = (startChar, endChar) =>
-  String.fromCharCode(
-    ...range(
-      endChar.charCodeAt(0) - startChar.charCodeAt(0),
-      startChar.charCodeAt(0)
-    )
-  )
+	const rgbValues = color
+		.match(/.{2}/g)!
+		.map((hex) => Number.parseInt(hex, 16))
+		.join(`, `);
+
+	return `rgba(${rgbValues}, ${opacity})`;
+};
+
+export const range = (size: number, startAt = 0) =>
+	[...Array.from({ length: size }).keys()].map((i) => i + startAt);
+
+export const characterRange = (startChar: string, endChar: string) =>
+	String.fromCodePoint(
+		...range(
+			endChar.codePointAt(0)! - startChar.codePointAt(0)!,
+			startChar.codePointAt(0)
+		)
+	);

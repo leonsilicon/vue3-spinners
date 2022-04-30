@@ -1,8 +1,8 @@
 <template>
 	<div class="wrapper">
 		<div
-			:key="n"
 			v-for="n in 2"
+			:key="n"
 			class="circle"
 			:style="getCircleStyle(n)"
 		></div>
@@ -10,10 +10,9 @@
 </template>
 
 <script setup lang="ts">
-const { size = 60, color = '#000000' } = defineProps<{
-	size: string | number;
-	color: string;
-}>();
+import { useSpinnerProps } from '~/utils/props.js';
+
+const { size, color } = defineProps(useSpinnerProps({ size: 60 }));
 
 const getCircleStyle = (version: number) => ({
 	animation: `bounce 2.1s ${version === 1 ? `1s` : `0s`} infinite ease-in-out`,

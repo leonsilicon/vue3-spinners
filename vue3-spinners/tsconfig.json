@@ -6,7 +6,10 @@
 		"paths": {
 			"~/*": ["./src/*"]
 		},
-		"jsx": "preserve"
+		"jsx": "preserve",
+		"types": [
+			"vue/ref-macros"
+		]
 	},
 	"include": ["./src", "./typings"]
 }

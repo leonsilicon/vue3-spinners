@@ -1,100 +1,86 @@
 <template>
+      <div class='wrapper'>
+
+
+          <div v-for='n in 2' class='lines' :key='n' :style='getLinesStyle(n)'></div>
+
+
+      </div>
 </template>
 
 <script setup lang='ts'>
-const { color = '#000000', size = 50 } = defineProps<{
-	color: string;
-	size: number;
-}>();
+import { useSpinnerProps } from '~/utils/props.js';
+import { calculateRgba } from '~/utils/rgba.js';
 
-const thickness = size => size / 5
-const lat = size => (size - thickness(size)) / 2
-const offset = size => lat(size) - thickness(size)
-const getColor = color => calculateRgba(color, 0.75)
+const { color, size } = defineProps(useSpinnerProps({ size: 50 }));
 
+const thickness = (size: number) => size / 5;
+const lat = (size: number) => (size - thickness(size)) / 2;
+const offset = (size: number) => lat(size) - thickness(size);
+const getColor = (color: string) => calculateRgba(color, 0.75);
+
+
+const getLinesStyle = (version: number) => ({
+  animation: `${version === 1 ? 'before' : 'after'} 2s infinite normal none running`
+});
 </script>
 
 <style scoped>
 @keyframes before {
-  0% {
-  width: v-bind('thickness(size)');
-  box-shadow: v-bind('lat(size)') v-bind('-offset(size)') v-bind('getColor(color)'), v-bind('-lat(size)') v-bind('offset(size')
+	0% {
+		width: v-bind('thickness(size)');
+		box-shadow: v-bind('lat(size)') v-bind('-offset(size)') v-bind('getColor(color)'), v-bind('-lat(size)') v-bind('offset(size) + "px"') v-bind('getColor(color)');
+	}
+  35% {
+		width: v-bind(size);
+		box-shadow: 0 v-bind('-offset(size) + "px"') v-bind('getColor(color)'), 0 v-bind('offset(size) + "px"') v-bind('getColor(color)');
+	}
+  70% {
+		width: v-bind('thickness(size) + "px"');
+		box-shadow: v-bind('-lat(size) + "px"') v-bind('-offset(size) + "px"') v-bind('getColor(color)', v-bind('lat(size) + "px"') v-bind('offset(size) + "px"') v-bind('getColor(color)');
+	}
+  100% {
+		box-shadow: v-bind('lat(size) + "px"') v-bind('-offset(size) + "px"') v-bind('getColor(color)'), v-bind('-lat(size) + "px"') v-bind('offset(size) + "px"') v-bind('getColor(color)');
 	}
 }
-</style>
-)}px ${getColor(color)}, ${-lat(size)}px ${offset(size)}px ${getColor(color)}}
-  35% {width: ${`${size}${sizeUnit}`};box-shadow: 0 ${-offset(
-  size
-)}px ${getColor(color)}, 0 ${offset(size)}px ${getColor(color)}}
-  70% {width: ${thickness(size)}px;box-shadow: ${-lat(size)}px ${-offset(
-  size
-)}px ${getColor(color)}, ${lat(size)}px ${offset(size)}px ${getColor(color)}}
-  100% {box-shadow: ${lat(size)}px ${-offset(size)}px ${getColor(
-  color
-)}, ${-lat(size)}px ${offset(size)}px ${getColor(color)}}
+
+@keyframes after {
+  0% {
+		height: v-bind('thickness(size) + "px"');
+		box-shadow: v-bind('offset(size) + "px"') v-bind('lat(size) + "px"') v-bind('getColor(color)'), v-bind('-offset(size) + "px"') v-bind('-lat(size) + "px"') v-bind('getColor(color)');
+	}
+
+  35% {
+		height: v-bind(size);
+		box-shadow: v-bind('offset(size) + "px"') 0 v-bind('getColor(color)'), v-bind('-offset(size) + "px"') 0 v-bind('getColor(color)');
+	}
+
+  70% {
+		height: v-bind('thickness(size) + "px"');
+		box-shadow: v-bind('offset(size) + "px"') v-bind('-lat(size) + "px"') v-bind('getColor(color)'), v-bind('-offset(size) + "px"') v-bind('-lat(size) + "px"') v-bind('getColor(color)');
+	}
+
+  100% {
+		box-shadow: v-bind('offset(size) + "px"') v-bind('lat(size) + "px"') v-bind('getColor(color)'), v-bind('-offset(size) + "px"') v-bind('-lat(size) + "px"') v-bind('getColor(color)');
+	}
 }
-</style>
 
-const before = (size, sizeUnit, color) => keyframes`
-`
-
-const after = (size, sizeUnit, color) => keyframes`
-  0% {height: ${thickness(size)}px;box-shadow: ${offset(size)}px ${lat(
-  size
-)}px ${getColor(color)}, ${-offset(size)}px ${-lat(size)}px ${getColor(color)}}
-  35% {height: ${`${size}${sizeUnit}`};box-shadow: ${offset(
-  size
-)}px 0 ${getColor(color)}, ${-offset(size)}px 0 ${getColor(color)}}
-  70% {height: ${thickness(size)}px;box-shadow: ${offset(size)}px ${-lat(
-  size
-)}px ${getColor(color)}, ${-offset(size)}px ${lat(size)}px ${getColor(color)}}
-  100% {box-shadow: ${offset(size)}px ${lat(size)}px ${getColor(
-  color
-)}, ${-offset(size)}px ${-lat(size)}px ${getColor(color)}}
-`
-
-const Wrapper = styled(`div`)`
+.wrapper {
   position: relative;
-  width: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
-  height: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
+  width: v-size(size);
+  height: v-bind(size);
   transform: rotate(165deg);
-`
+}
 
-const Lines = styled(`div`)`
+.lines {
   position: absolute;
   top: 50%;
   left: 50%;
   display: block;
-  width: ${({ size, sizeUnit }) => `${size / 5}${sizeUnit}`};
-  height: ${({ size, sizeUnit }) => `${size / 5}${sizeUnit}`};
-  border-radius: ${({ size, sizeUnit }) => `${size / 10}${sizeUnit}`};
+  width: v-bind(size / 5);
+  height: v-bind(size / 5);
+  border-radius: v-bind(size / 10);
   transform: translate(-50%, -50%);
-  animation: ${({ size, sizeUnit, color, version }) => `${(version === 1 ? before(size, sizeUnit, color) : after(size, sizeUnit, color))} 2s infinite normal none running`};
   content: '';
-`
-
-export const HashLoader = {
-  functional: true,
-  props: {
-    loading: { type: Boolean, default: true },
-    sizeUnit: { type: String, default: `px` }
-  },
-  render(h, { props, data }) {
-    return props.loading ? (
-      <Wrapper
-        {...data}
-        size={props.size}
-        sizeUnit={props.sizeUnit}
-      >
-        {range(2, 1).map(i => (
-          <Lines
-            size={props.size}
-            sizeUnit={props.sizeUnit}
-            color={props.color}
-            version={i}
-          />
-        ))}
-      </Wrapper>
-    ) : null
-  }
 }
+</style>

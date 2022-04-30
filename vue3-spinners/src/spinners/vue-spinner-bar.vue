@@ -1,15 +1,10 @@
 <script setup lang="ts">
+import { useSpinnerProps } from '~/utils/props.js';
 import { calculateRgba } from '~/utils/rgba.js';
 
-const {
-	color = '#000000',
-	width = 100,
-	height = 4,
-} = defineProps<{
-	color: string;
-	width: string | number;
-	height: string | number;
-}>();
+const { color, width, height } = defineProps(
+	useSpinnerProps({ height: 4, width: 100 })
+);
 
 function getBarStyle(version: number) {
 	return {
@@ -26,7 +21,7 @@ function getBarStyle(version: number) {
 
 <template>
 	<div class="wrapper">
-		<div v-for="n in 2" class="bar" :style="getBarStyle(n)"></div>
+		<div v-for="n in 2" :key="n" class="bar" :style="getBarStyle(n)"></div>
 	</div>
 </template>
 

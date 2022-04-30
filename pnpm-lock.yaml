@@ -43,15 +43,19 @@ importers:
 
   vue3-spinners:
     specifiers:
+      '@types/parse-unit': ^1.0.1
       '@vue/runtime-core': ^3.2.33
       just-range: ^4.0.1
       just-zip-it: ^3.0.2
+      parse-unit: ^1.0.1
       vitest: ^0.8.3
       vue: ^3.2.33
     dependencies:
       just-range: 4.0.1
       just-zip-it: 3.0.2
+      parse-unit: 1.0.1
     devDependencies:
+      '@types/parse-unit': 1.0.1
       '@vue/runtime-core': 3.2.33
       vitest: 0.8.5
       vue: 3.2.33
@@ -684,6 +688,10 @@ packages:
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
+    dev: true
+
+  /@types/parse-unit/1.0.1:
+    resolution: {integrity: sha512-p6QazF9lsJKxD+l/jcPQSGthgFbtKQuNSOH48zdPCnItg2qrvKGwaDd5KRmdsC/qmJ20zGafQ/VzNtIfi7AfiA==}
     dev: true
 
   /@types/resolve/1.17.1:
@@ -4371,6 +4379,10 @@ packages:
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
     dev: true
+
+  /parse-unit/1.0.1:
+    resolution: {integrity: sha1-fhu21b7zh0wo45JSaiVBFwKR7s8=}
+    dev: false
 
   /path-exists/3.0.0:
     resolution: {integrity: sha1-zg6+ql94yxiSXqfYENe1mwEP1RU=}
