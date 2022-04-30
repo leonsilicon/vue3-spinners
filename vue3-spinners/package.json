@@ -48,7 +48,7 @@
 	"devDependencies": {
 		"@types/parse-unit": "^1.0.1",
 		"@vue/runtime-core": "^3.2.33",
-		"compile-vue-sfc": "^0.0.8",
+		"compile-vue-sfc": "^0.0.9",
 		"globby": "^13.1.1",
 		"vitest": "^0.8.3",
 		"vue": "^3.2.33"

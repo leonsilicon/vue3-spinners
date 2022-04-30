@@ -1,19 +1,34 @@
-declare const _default: import("vue").DefineComponent<__VLS_TypePropsToRuntimeProps<{
-    color?: string;
-    size?: string;
-    margin?: string;
-}>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
-    color?: string;
-    size?: string;
-    margin?: string;
-}>>>, {}>;
-export default _default;
-declare type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
-declare type __VLS_TypePropsToRuntimeProps<T> = {
-    [K in keyof T]-?: {} extends Pick<T, K> ? {
-        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
-    } : {
-        type: import('vue').PropType<T[K]>;
-        required: true;
+declare const _default: import("vue").DefineComponent<{
+    color: {
+        type: StringConstructor;
+        default: string;
     };
-};
+} & {
+    size: {
+        type: (StringConstructor | NumberConstructor)[];
+        default: string | number;
+    };
+    margin: {
+        type: StringConstructor;
+        default: string;
+    };
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    color: {
+        type: StringConstructor;
+        default: string;
+    };
+} & {
+    size: {
+        type: (StringConstructor | NumberConstructor)[];
+        default: string | number;
+    };
+    margin: {
+        type: StringConstructor;
+        default: string;
+    };
+}>>, {
+    size: string | number;
+    margin: string;
+    color: string;
+}>;
+export default _default;

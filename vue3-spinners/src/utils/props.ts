@@ -27,6 +27,7 @@ export function useSpinnerProps<T extends UseSpinnerPropsProps>(props: T) {
 
 	const actualProps = { ...defaultProps };
 	for (const prop of Object.keys(props)) {
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 		actualProps[prop] = optionalProps[prop];
 	}
 

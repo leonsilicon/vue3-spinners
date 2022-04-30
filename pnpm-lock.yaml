@@ -45,7 +45,7 @@ importers:
     specifiers:
       '@types/parse-unit': ^1.0.1
       '@vue/runtime-core': ^3.2.33
-      compile-vue-sfc: ^0.0.8
+      compile-vue-sfc: ^0.0.9
       globby: ^13.1.1
       just-range: ^4.0.1
       just-zip-it: ^3.0.2
@@ -59,7 +59,7 @@ importers:
     devDependencies:
       '@types/parse-unit': 1.0.1
       '@vue/runtime-core': 3.2.33
-      compile-vue-sfc: 0.0.8_typescript@4.6.3+vue@3.2.33
+      compile-vue-sfc: 0.0.9_typescript@4.6.3+vue@3.2.33
       globby: 13.1.1
       vitest: 0.8.5
       vue: 3.2.33
@@ -1601,8 +1601,8 @@ packages:
       dot-prop: 5.3.0
     dev: true
 
-  /compile-vue-sfc/0.0.8_typescript@4.6.3+vue@3.2.33:
-    resolution: {integrity: sha512-C1YGj6VbLFMFOsJKeIXsy+8eERvdk65N73PIrQk6881Tw5/XH1lLBnxsMs3HAT1hQ4EIbvvws6YQEUqrqFlMvw==}
+  /compile-vue-sfc/0.0.9_typescript@4.6.3+vue@3.2.33:
+    resolution: {integrity: sha512-H7nSKLgahvGps49uNmOgQbQegmdKBeL951/g7rGtZg3pOOmG1i5KdxzgezRm/n16MehpCkKT7AJRafPL7RsWZg==}
     hasBin: true
     dependencies:
       '@babel/types': 7.17.10
