@@ -1,14 +1,10 @@
 <template>
-      <div class='wrapper'>
-
-
-          <div v-for='n in 2' class='lines' :key='n' :style='getLinesStyle(n)'></div>
-
-
-      </div>
+	<div class="wrapper">
+		<div v-for="n in 2" :key="n" class="lines" :style="getLinesStyle(n)"></div>
+	</div>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
 import { useSpinnerProps } from '~/utils/props.js';
 import { calculateRgba } from '~/utils/rgba.js';
 
@@ -19,9 +15,10 @@ const lat = (size: number) => (size - thickness(size)) / 2;
 const offset = (size: number) => lat(size) - thickness(size);
 const getColor = (color: string) => calculateRgba(color, 0.75);
 
-
 const getLinesStyle = (version: number) => ({
-  animation: `${version === 1 ? 'before' : 'after'} 2s infinite normal none running`
+	animation: `${
+		version === 1 ? 'before' : 'after'
+	} 2s infinite normal none running`,
 });
 </script>
 
