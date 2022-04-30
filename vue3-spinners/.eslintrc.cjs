@@ -8,6 +8,7 @@ module.exports = defineConfig({
 		extraFileExtensions: ['vue'],
 	},
 	rules: {
+		'vue/no-setup-props-destructure': 'off',
 		'import/no-extraneous-dependencies': [
 			'error',
 			{

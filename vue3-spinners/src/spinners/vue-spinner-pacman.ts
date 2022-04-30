@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'vue-emotion'
+gximport styled, { keyframes } from 'vue-emotion'
 import { range } from '../utils'
 
 // This returns an animation

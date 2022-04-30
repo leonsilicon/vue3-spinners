@@ -1,0 +1,78 @@
+<script setup lang="ts">
+const {
+	color = '#000000',
+	size = '15px',
+	margin = '2px',
+} = defineProps<{
+	color?: string;
+	size?: number;
+	margin?: string;
+}>();
+
+const riseAmount = 30;
+
+const getCircleStyle = (version: number) => ({
+	animation: `${
+		version % 2 === 0 ? 'even' : 'odd'
+	} 1s 0s infinite cubic-bezier(0.15, 0.46, 0.9, 0.6)`,
+});
+</script>
+
+<template>
+	<div>
+		<div
+			v-for="n in 5"
+			:key="n"
+			class="circle"
+			:style="getCircleStyle(n)"
+		></div>
+	</div>
+</template>
+
+<style scoped>
+@keyframes even {
+	0% {
+		transform: scale(1.1);
+	}
+	25% {
+		transform: translateY(v-bind('riseAmount + "px"'));
+	}
+	50% {
+		transform: scale(0.4);
+	}
+	75% {
+		transform: translateY(v-bind('riseAmount + "px"'));
+	}
+	100% {
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes odd {
+	0% {
+		transform: scale(0.4);
+	}
+	25% {
+		transform: translateY(v-bind('-riseAmount + "px"'));
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	75% {
+		transform: translateY(v-bind('-riseAmount + "px"'));
+	}
+	100% {
+		transform: translateY(0) scale(0.75);
+	}
+}
+
+.circle {
+	display: inline-block;
+	width: v-bind(size);
+	height: v-bind(size);
+	margin: v-bind(margin);
+	border-radius: 100%;
+	background-color: v-bind(color);
+	animation-fill-mode: both;
+}
+</style>
