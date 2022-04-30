@@ -1,17 +1,9 @@
 <script setup lang="ts">
+import { useSpinnerProps } from '~/utils/props.js';
+
 const {
-	color = '#000000',
-	height = '35px',
-	width = '4px',
-	radius = '2px',
-	margin = '2px',
-} = defineProps<{
-	color?: string;
-	height?: string;
-	width?: string;
-	radius?: string;
-	margin?: string;
-}>();
+	color, height, width, radius, margin
+} = defineProps(useSpinnerProps({ height: '35px', width: '4px', radius: '2px', margin: '2px'}))
 
 const getBarStyle = (version: number) => ({
 	animation: `scale 1s cubic-bezier(0.2, 0.68, 0.18, 1.08) ${

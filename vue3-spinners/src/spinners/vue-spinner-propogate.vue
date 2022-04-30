@@ -1,8 +1,11 @@
 <script setup lang="ts">
-const { color = '#000000', size = '15px' } = defineProps<{
-	color?: string;
-	size?: string;
-}>();
+import { useSpinnerProps } from '~/utils/props.js';
+
+const { color, size } = defineProps(
+	useSpinnerProps({
+		size: '15px',
+	})
+);
 
 // 1.5 4.5 7.5
 const distance = [1, 3, 5];
@@ -120,7 +123,7 @@ const getDistance = (index: number) => `${distance[index]!}rem`;
 	height: v-bind(size);
 	border-radius: 50%;
 	background: v-bind(color);
-	font-size: v-bind('size / 3');
+	font-size: calc(v-bind('size') / 3);
 	animation-fill-mode: forwards;
 }
 </style>

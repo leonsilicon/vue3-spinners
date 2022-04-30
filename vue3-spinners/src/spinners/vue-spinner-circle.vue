@@ -19,6 +19,7 @@ const getRingStyle = (version: number) => ({
 	animation: `circle 1s ${version * 0.2}s infinite linear`,
 });
 </script>
+
 <style>
 @keyframes circle {
 	0% {

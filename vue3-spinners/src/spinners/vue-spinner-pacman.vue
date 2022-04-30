@@ -1,9 +1,11 @@
 <script style lang="ts">
 import { useSpinnerProps } from '~/utils/props.js';
 
-const { size, color, margin } = defineProps(
-	useSpinnerProps({ size: '25px', margin: '2px ' })
+const { size: sizeProp, color, margin } = defineProps(
+	useSpinnerProps({ size: '25px', margin: '2px' })
 );
+
+const size = $(useSizeProp(() => sizeProp));
 
 const s1 = (size: string) => `${size} solid transparent`;
 const s2 = (size: string, color: string) => `${size} solid ${color}`;

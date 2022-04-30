@@ -1,8 +1,7 @@
 <script setup lang="ts">
-const { color = '#000000', size = '60px' } = defineProps<{
-	color?: string;
-	size?: string;
-}>();
+import { useSpinnerProps } from '~/utils/props.js'
+
+const { color, size } = defineProps(useSpinnerProps({ size: '60px' }))
 
 const getRingStyle = (version: number) => ({
 	animation: `${version === 1 ? 'right' : 'left'} 2s 0s infinite linear`,

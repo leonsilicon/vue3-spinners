@@ -1,8 +1,7 @@
 <script setup lang="ts">
-const { color = '#000000', size = '50px' } = defineProps<{
-	color?: string;
-	size?: string;
-}>();
+import { useSpinnerProps } from '~/utils/props.js';
+
+const { color, size } = defineProps(useSpinnerProps({ size: '50px '}));
 </script>
 
 <template>

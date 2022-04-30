@@ -2,12 +2,15 @@ import parseUnit from 'parse-unit';
 import type { ComputedGetter } from 'vue';
 import { computed } from 'vue';
 
-export function useSize(sizeGetter: ComputedGetter<string | number>) {
+export function useSizeProp(sizeGetter: ComputedGetter<string | number>) {
 	return computed(() => {
-		const [value, unit] = parseUnit(sizeGetter());
+		const sizeProp = sizeGetter();
+		const [value, unit] = parseUnit(String(sizeProp));
+
 		return {
 			value,
-			unit,
+			unit: unit ?? 'px',
+			size,
 		};
 	});
 }

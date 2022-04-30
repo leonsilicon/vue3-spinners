@@ -3,14 +3,10 @@ interface UseSpinnerPropsProps {
 	size?: string | number;
 	height?: string | number;
 	width?: string | number;
+	radius?: string | number;
 }
 
-export function useSpinnerProps<T extends UseSpinnerPropsProps>({
-	size,
-	margin,
-	height,
-	width,
-}: T) {
+export function useSpinnerProps<T extends UseSpinnerPropsProps>(props: T) {
 	const defaultProps = {
 		color: {
 			type: String,
@@ -21,14 +17,20 @@ export function useSpinnerProps<T extends UseSpinnerPropsProps>({
 	const optionalProps = {
 		size: {
 			type: [String, Number],
-			default: size,
+			default: props.size,
 		},
-		margin: { type: String, default: margin },
-		height: { type: [String, Number], default: height },
-		width: { type: [String, Number], default: width },
+		margin: { type: String, default: props.margin },
+		height: { type: [String, Number], default: props.height },
+		width: { type: [String, Number], default: props.width },
+		radius: { type: [String, Number], default: props.radius },
 	};
 
-	return { ...defaultProps, ...optionalProps } as typeof defaultProps & {
+	const actualProps = { ...defaultProps };
+	for (const prop of Object.keys(props)) {
+		actualProps[prop] = optionalProps[prop];
+	}
+
+	return actualProps as typeof defaultProps & {
 		[K in keyof typeof optionalProps as T[K] extends NonNullable<
 			UseSpinnerPropsProps[K]
 		>

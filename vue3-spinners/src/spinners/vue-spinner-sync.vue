@@ -1,13 +1,9 @@
 <script setup lang="ts">
+import { useSpinnerProps } from '~/utils/props.js';
+
 const {
-	color = '#000000',
-	size = '15px',
-	margin = '2px',
-} = defineProps<{
-	color?: string;
-	size?: string;
-	margin?: string;
-}>();
+	color, size, margin
+} = defineProps(useSpinnerProps({ size: '15px', margin: '2px' }));
 
 const getCircleStyle = (version: number) => ({
 	animation: `sync 0.6s ease-in-out ${

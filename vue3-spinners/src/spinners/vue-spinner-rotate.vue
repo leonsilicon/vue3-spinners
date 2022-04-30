@@ -1,13 +1,12 @@
 <script setup lang="ts">
+import { useSpinnerProps } from '~/utils/props.js';
+
 const {
-	color = '#000000',
-	size = '20px',
-	margin = '2px',
-} = defineProps<{
-	color?: string;
-	size?: string;
-	margin?: string;
-}>();
+	color,
+	size,
+	margin,
+} = defineProps(useSpinnerProps({ size: '20px', margin: '2px'}))
+
 
 const getCircleStyle = (side: number) => ({
 	left: `${side ? -28 : 25}px`,

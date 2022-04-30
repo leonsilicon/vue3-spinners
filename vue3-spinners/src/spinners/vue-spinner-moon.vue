@@ -7,8 +7,10 @@
 
 <script setup lang="ts">
 import { useSpinnerProps } from '~/utils/props.js';
+import { useSizeProp } from '~/utils/size.js';
 
-const { color, size } = defineProps(useSpinnerProps({ size: 60 }));
+const { color, size: sizeProp } = defineProps(useSpinnerProps({ size: 60 }));
+const { value: sizeValue } = $(useSizeProp(() => sizeProp));
 
 const moonSize = (size: number) => (size / 7).toFixed(5);
 </script>
@@ -22,15 +24,15 @@ const moonSize = (size: number) => (size / 7).toFixed(5);
 
 .wrapper {
 	position: relative;
-	width: v-bind('size + moonSize(size) * 2');
-	height: v-bind('size + moonSize(size) * 2');
+	width: calc(v-bind('size') + v-bind('moonSize(sizeValue) + unit') * 2);
+	height: calc(v-bind('size') + v-bind('moonSize(sizeValue) + unit') * 2);
 	animation: moon 0.6s linear 0s infinite normal forwards running;
 	box-sizing: content-box;
 }
 
 .moon {
 	position: absolute;
-	top: v-bind('size / 2 - moonSize(size) / 2');
+	top: calc(v-bind('size') / 2 - v-bind('moonSize(sizeValue) + unit') / 2);
 	background-color: v-bind(color);
 	opacity: 0.8;
 	animation: moon 0.6s linear 0s infinite normal forwards running;
@@ -41,7 +43,7 @@ const moonSize = (size: number) => (size / 7).toFixed(5);
 }
 
 .ring {
-	border-width: v-bind('moonSize(size) + "px"');
+	border-width: v-bind('moonSize(sizeValue) + unit');
 	border-style: solid;
 	border-color: v-bind('color');
 	border-image: initial;
