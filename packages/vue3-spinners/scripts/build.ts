@@ -13,7 +13,7 @@ await Promise.all(
 			declarations: true,
 			write: true,
 			files: sfcFile,
-			projectRootPath: join(import.meta.url, '../..')
+			projectRootPath: join(import.meta.url, '../..'),
 		});
 	})
 );

@@ -1,0 +1,6 @@
+{
+	"name": "@vue3-spinners/scripts",
+	"dependencies": {
+		"lion-system": "^1.3.27"
+	}
+}
