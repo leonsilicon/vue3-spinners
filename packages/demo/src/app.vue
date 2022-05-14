@@ -1,56 +1,7 @@
 <script setup lang="ts">
-import {
-	VueSpinner,
-	VueSpinnerAudio,
-	VueSpinnerBall,
-	VueSpinnerBar,
-	VueSpinnerBars,
-	VueSpinnerBox,
-	VueSpinnerClock,
-	VueSpinnerComment,
-	VueSpinnerCore,
-	VueSpinnerDots,
-	VueSpinnerFacebook,
-	VueSpinnerGears,
-	VueSpinnerGrid,
-	VueSpinnerHearts,
-	VueSpinnerHourglass,
-	VueSpinnerInfinity,
-	VueSpinnerIos,
-	VueSpinnerOrbit,
-	VueSpinnerOval,
-	VueSpinnerPie,
-	VueSpinnerPuff,
-	VueSpinnerRadio,
-	VueSpinnerRings,
-	VueSpinnerTail,
-} from 'vue3-spinners';
+import * as Spinners from 'vue3-spinners';
 
-const spinnerComponents = [
-	VueSpinner,
-	VueSpinnerAudio,
-	VueSpinnerBall,
-	VueSpinnerBars,
-	VueSpinnerBox,
-	VueSpinnerClock,
-	VueSpinnerComment,
-	VueSpinnerCore,
-	VueSpinnerDots,
-	VueSpinnerFacebook,
-	VueSpinnerGears,
-	VueSpinnerGrid,
-	VueSpinnerHearts,
-	VueSpinnerHourglass,
-	VueSpinnerInfinity,
-	VueSpinnerIos,
-	VueSpinnerOrbit,
-	VueSpinnerOval,
-	VueSpinnerPie,
-	VueSpinnerPuff,
-	VueSpinnerRadio,
-	VueSpinnerRings,
-	VueSpinnerTail,
-];
+const spinnerComponents = [...Object.values(Spinners)];
 
 const spinnerSize = $ref(40);
 const spinnerColor = $ref('black');

@@ -1,7 +1,7 @@
 export { default as VueSpinner } from './vue-spinner.js';
 export { default as VueSpinnerAudio } from './vue-spinner-audio.js';
 export { default as VueSpinnerBall } from './vue-spinner-ball.js';
-export { default as VueSpinnerBar } from '~/spinners/vue-spinner-bar.vue.js';
+export { default as VueSpinnerBar } from './vue-spinner-bar.vue.js';
 export { default as VueSpinnerBars } from './vue-spinner-bars.js';
 export { default as VueSpinnerBeat } from './vue-spinner-beat.vue.js';
 export { default as VueSpinnerBounce } from './vue-spinner-bounce.vue.js';
@@ -28,7 +28,7 @@ export { default as VueSpinnerOrbit } from './vue-spinner-orbit.js';
 export { default as VueSpinnerOval } from './vue-spinner-oval.js';
 export { default as VueSpinnerPacman } from './vue-spinner-pacman.vue.js';
 export { default as VueSpinnerPie } from './vue-spinner-pie.js';
-export { default as VueSpinnerPropogate } from './vue-spinner-propogate.vue.js';
+export { default as VueSpinnerPropagate } from './vue-spinner-propagate.vue.js';
 export { default as VueSpinnerPuff } from './vue-spinner-puff.js';
 export { default as VueSpinnerPulse } from './vue-spinner-pulse.vue.js';
 export { default as VueSpinnerRadio } from './vue-spinner-radio.js';

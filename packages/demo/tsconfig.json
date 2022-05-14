@@ -1,5 +1,5 @@
 {
-	"extends": "../tsconfig.json",
+	"extends": "lionconfig/tsconfig.json",
 	"compilerOptions": {
 		"types": ["vue/ref-macros"]
 	}

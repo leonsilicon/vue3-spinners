@@ -31,9 +31,8 @@
 		"url": "https://github.com/leonzalion/vue3-spinners.git"
 	},
 	"homepage": "https://github.com/leonzalion/vue3-spinners#readme",
-	"exports": "./src/index.ts",
+	"exports": "./src/index.js",
 	"scripts": {
-		"preinstall": "pnpm build",
 		"release": "lionp",
 		"build": "node-ts ./scripts/build.ts",
 		"start": "node-ts ./src/index.ts",

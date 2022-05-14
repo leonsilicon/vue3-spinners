@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "@vue3-spinners/demo",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
