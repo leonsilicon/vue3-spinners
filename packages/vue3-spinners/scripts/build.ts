@@ -9,16 +9,11 @@ rmDist();
 
 await compileVueSFC({
 	declarations: true,
+	outDir: 'dist',
 	files: globbySync(['./src/spinners/*.vue']),
-	projectRootPath: join(import.meta.url, '../..'),
+	projectRootPath: join(import.meta.url, '../src'),
 });
 
 exec('tsc');
 exec('tsc-alias');
-
-for (const artifactFile of globbySync(['./src/components/*.{d.ts,js}'])) {
-	console.log(artifactFile);
-	// fs.rmSync(artifactFile, { force: true });
-}
-
 await copyPackageFiles();
