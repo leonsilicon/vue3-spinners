@@ -14,10 +14,7 @@
 		"url": "https://leonzalion.com"
 	},
 	"type": "module",
-	"exports": {
-		".": "./src/index.ts",
-		"./spinners.css": "./spinners.css"
-	},
+	"exports": "./src/index.ts",
 	"keywords": [
 		"vue-spinners",
 		"vue-spinner",
