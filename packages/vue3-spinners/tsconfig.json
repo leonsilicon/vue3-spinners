@@ -9,5 +9,5 @@
 		"jsx": "preserve",
 		"types": ["vue/ref-macros"]
 	},
-	"include": ["./src"]
+	"include": ["./src", "./typings"]
 }

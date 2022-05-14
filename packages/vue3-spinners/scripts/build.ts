@@ -16,4 +16,4 @@ await compileVueSFC({
 
 exec('tsc');
 exec('tsc-alias');
-await copyPackageFiles();
+await copyPackageFiles({ commonjs: false });

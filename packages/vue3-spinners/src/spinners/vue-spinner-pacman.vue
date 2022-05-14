@@ -88,7 +88,7 @@ const wrapperStyle = $computed(
 		opacity: 0.7;
 	}
 	100% {
-		transform: translate(calc(-4 * v-bind('size')), calc(-1 * v-bind('size') / 4);
+		transform: translate(calc(-4 * v-bind('size')), calc(-1 * v-bind('size') / 4));
 	}
 }
 </style>
