@@ -15,5 +15,6 @@ export default function useSpinner(
 	return {
 		cSize: computed(() => props.size),
 		classes: computed(() => 'vue-spinner'),
+		style: computed(() => ({ color: props.color })),
 	};
 }

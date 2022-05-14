@@ -17,12 +17,13 @@ export default defineComponent({
 	},
 
 	setup(props) {
-		const { cSize, classes } = useSpinner(props);
+		const { cSize, classes, style } = useSpinner(props);
 
 		return () =>
 			h(
 				'svg',
 				{
+					style: style.value,
 					class: classes.value + ' vue-spinner-mat',
 					width: cSize.value,
 					height: cSize.value,

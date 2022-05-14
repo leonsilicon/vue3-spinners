@@ -114,12 +114,13 @@ export default defineComponent({
 	props: spinnerProps,
 
 	setup(props) {
-		const { cSize, classes } = useSpinner(props);
+		const { cSize, classes, style } = useSpinner(props);
 
 		return () =>
 			h(
 				'svg',
 				{
+					style: style.value,
 					class: classes.value,
 					width: cSize.value,
 					height: cSize.value,

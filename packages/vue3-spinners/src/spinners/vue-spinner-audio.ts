@@ -93,12 +93,13 @@ export default defineComponent({
 	name: 'VueSpinnerAudio',
 	props: spinnerProps,
 	setup(props) {
-		const { cSize, classes } = useSpinner(props);
+		const { cSize, classes, style } = useSpinner(props);
 
 		return () =>
 			h(
 				'svg',
 				{
+					style: style.value,
 					class: classes.value,
 					fill: 'currentColor',
 					width: cSize.value,
