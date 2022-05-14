@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { CSSProperties } from 'vue';
+import type { CSSProperties } from 'vue';
+
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSizeProp } from '~/utils/size.js';
 
@@ -38,7 +39,7 @@ const moonStyle = $computed(
 
 const ringStyle = $computed(
 	(): CSSProperties => ({
-		borderWidth: moonSize(sizeValue) + sizeUnit,
+		borderWidth: `${moonSize(sizeValue)}${sizeUnit}`,
 		borderStyle: 'solid',
 		borderColor: color,
 		borderImage: 'initial',

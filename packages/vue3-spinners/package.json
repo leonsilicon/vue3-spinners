@@ -1,20 +1,8 @@
 {
 	"name": "vue3-spinners",
+	"type": "module",
 	"version": "1.1.1",
 	"description": "Spinners for Vue 3.",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/leonzalion/vue3-spinners.git"
-	},
-	"homepage": "https://github.com/leonzalion/vue3-spinners#readme",
-	"author": {
-		"name": "Leon Si",
-		"email": "contact@leonzalion.com",
-		"url": "https://leonzalion.com"
-	},
-	"type": "module",
-	"exports": "./src/index.ts",
 	"keywords": [
 		"vue-spinners",
 		"vue-spinner",
@@ -32,6 +20,18 @@
 		"svg",
 		"css"
 	],
+	"license": "MIT",
+	"author": {
+		"name": "Leon Si",
+		"email": "contact@leonzalion.com",
+		"url": "https://leonzalion.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/leonzalion/vue3-spinners.git"
+	},
+	"homepage": "https://github.com/leonzalion/vue3-spinners#readme",
+	"exports": "./src/index.ts",
 	"scripts": {
 		"preinstall": "pnpm build",
 		"release": "lionp",
@@ -41,6 +41,9 @@
 		"lint": "eslint --cache --fix .",
 		"prettier": "prettier --write .",
 		"typecheck": "tsc --noEmit"
+	},
+	"peerDependencies": {
+		"vue": "^3"
 	},
 	"dependencies": {
 		"just-range": "^4.0.1",
@@ -58,9 +61,6 @@
 		"typescript": "^4.6.4",
 		"vitest": "^0.12.4",
 		"vue": "^3.2.33"
-	},
-	"peerDependencies": {
-		"vue": "^3"
 	},
 	"publishConfig": {
 		"directory": "dist"

@@ -3,6 +3,7 @@ import {
 	VueSpinner,
 	VueSpinnerAudio,
 	VueSpinnerBall,
+	VueSpinnerBar,
 	VueSpinnerBars,
 	VueSpinnerBox,
 	VueSpinnerClock,

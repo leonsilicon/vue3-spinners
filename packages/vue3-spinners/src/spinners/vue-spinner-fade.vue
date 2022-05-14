@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import zip from 'just-zip-it';
-import { CSSProperties } from 'vue';
+import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
 import { characterRange, range } from '~/utils/rgba.js';

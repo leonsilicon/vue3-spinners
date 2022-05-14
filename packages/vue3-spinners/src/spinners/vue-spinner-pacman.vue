@@ -1,4 +1,4 @@
-<script style lang="ts">
+<script setup lang="ts">
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSizeProp } from '~/utils/size.js';
 

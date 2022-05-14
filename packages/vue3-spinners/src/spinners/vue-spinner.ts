@@ -1,3 +1,5 @@
+import './vue-spinner.css';
+
 import { defineComponent, h } from 'vue';
 
 import useSpinner, { spinnerProps } from '~/utils/use-spinner.js';
