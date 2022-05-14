@@ -12,7 +12,7 @@
 		"typecheck": "pnpm recursive run typecheck"
 	},
 	"devDependencies": {
-		"@leonzalion/configs": "^1.4.15",
+		"lionconfig": "^1.6.2",
 		"typescript": "^4.6.4"
 	}
 }

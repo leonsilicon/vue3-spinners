@@ -8,13 +8,11 @@ chProjectDir(import.meta.url);
 rmDist();
 
 await Promise.all(
-	globbySync(['./src/spinners/*.vue']).map(async (sfcFile) => {
-		await compileVueSFC({
-			declarations: true,
-			write: true,
-			files: sfcFile,
-			projectRootPath: join(import.meta.url, '../..'),
-		});
+	await compileVueSFC({
+		declarations: true,
+		write: true,
+		files: globbySync(['./src/spinners/*.vue']),
+		projectRootPath: join(import.meta.url, '../..'),
 	})
 );
 
