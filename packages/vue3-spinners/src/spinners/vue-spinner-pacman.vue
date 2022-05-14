@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { CSSProperties } from 'vue';
+
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSizeProp } from '~/utils/size.js';
 
@@ -17,7 +19,7 @@ const {
 const s1 = (size: string) => `${size} solid transparent`;
 const s2 = (size: string, color: string) => `${size} solid ${color}`;
 
-const getPacmanStyle = (version: number) => ({
+const getPacmanStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
 	width: 0,
 	height: 0,
@@ -29,7 +31,7 @@ const getPacmanStyle = (version: number) => ({
 	animation: `pacman${version} ease-in-out 0.8s infinite normal both running`,
 });
 
-const getBallStyle = (version: number) => ({
+const getBallStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
 	top: sizeString,
 	left: `${sizeValue * 4}${sizeUnit}`,
@@ -44,12 +46,14 @@ const getBallStyle = (version: number) => ({
 	}s infinite normal both running`,
 });
 
-const wrapperStyle = $computed(() => ({
-	position: 'relative',
-	width: sizeString,
-	height: sizeString,
-	fontSize: 0,
-}));
+const wrapperStyle = $computed(
+	(): CSSProperties => ({
+		position: 'relative',
+		width: sizeString,
+		height: sizeString,
+		fontSize: 0,
+	})
+);
 </script>
 
 <template>
@@ -84,7 +88,7 @@ const wrapperStyle = $computed(() => ({
 		opacity: 0.7;
 	}
 	100% {
-		transform: translate(v-bind('-4 * size'), v-bind('-size / 4'));
+		transform: translate(calc(-4 * v-bind('size')), calc(-1 * v-bind('size') / 4);
 	}
 }
 </style>
