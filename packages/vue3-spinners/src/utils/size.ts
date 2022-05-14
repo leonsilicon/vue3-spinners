@@ -5,12 +5,13 @@ import { computed } from 'vue';
 export function useSizeProp(sizeGetter: ComputedGetter<string | number>) {
 	return computed(() => {
 		const sizeProp = sizeGetter();
-		const [value, unit] = parseUnit(String(sizeProp));
+		let [value, unit] = parseUnit(String(sizeProp));
+		unit ??= 'px';
 
 		return {
 			value,
-			unit: unit ?? 'px',
-			size,
+			unit,
+			string: `${value}${unit}`,
 		};
 	});
 }

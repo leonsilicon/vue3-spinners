@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { CSSProperties } from 'vue';
 import { useSpinnerProps } from '~/utils/props.js';
+import { useSizeProp } from '~/utils/size.js';
 
 const { color, size } = defineProps(
 	useSpinnerProps({
@@ -7,28 +9,42 @@ const { color, size } = defineProps(
 	})
 );
 
+const {
+	string: sizeString,
+	unit: sizeUnit,
+	value: sizeValue,
+} = $(useSizeProp(() => size));
+
 // 1.5 4.5 7.5
 const distance = [1, 3, 5];
 
-const getCircleStyle = (version: number) => ({
+const getCircleStyle = (version: number): CSSProperties => ({
+	position: 'absolute',
+	width: sizeString,
+	height: sizeString,
+	borderRadius: '50%',
+	background: color,
+	fontSize: `${sizeValue / 3}${sizeUnit}`,
+	animationFillMode: 'forwards',
 	animation: `propagate${version} 1.5s infinite`,
 });
 
 const getDistance = (index: number) => `${distance[index]!}rem`;
+
+const wrapperStyle = $computed(
+	(): CSSProperties => ({
+		position: 'relative',
+	})
+);
 </script>
 
 <template>
-	<div class="wrapper">
-		<div
-			v-for="n in 6"
-			:key="n"
-			class="circle"
-			:style="getCircleStyle(n)"
-		></div>
+	<div :style="wrapperStyle">
+		<div v-for="n in 6" :key="n" :style="getCircleStyle(n)"></div>
 	</div>
 </template>
 
-<style scoped>
+<style>
 @keyframes propagate0 {
 	25% {
 		transform: translateX(v-bind('-getDistance(0)')) scale(0.75);
@@ -111,19 +127,5 @@ const getDistance = (index: number) => `${distance[index]!}rem`;
 	95% {
 		transform: translateX(0rem) scale(1);
 	}
-}
-
-.wrapper {
-	position: relative;
-}
-
-.circle {
-	position: absolute;
-	width: v-bind(size);
-	height: v-bind(size);
-	border-radius: 50%;
-	background: v-bind(color);
-	font-size: calc(v-bind('size') / 3);
-	animation-fill-mode: forwards;
 }
 </style>

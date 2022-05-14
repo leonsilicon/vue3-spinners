@@ -1,45 +1,66 @@
 <script style lang="ts">
 import { useSpinnerProps } from '~/utils/props.js';
+import { useSizeProp } from '~/utils/size.js';
 
-const { size: sizeProp, color, margin } = defineProps(
-	useSpinnerProps({ size: '25px', margin: '2px' })
-);
+const {
+	size: sizeProp,
+	color,
+	margin,
+} = defineProps(useSpinnerProps({ size: '25px', margin: '2px' }));
 
-const size = $(useSizeProp(() => sizeProp));
+const {
+	value: sizeValue,
+	unit: sizeUnit,
+	string: sizeString,
+} = $(useSizeProp(() => sizeProp));
 
 const s1 = (size: string) => `${size} solid transparent`;
 const s2 = (size: string, color: string) => `${size} solid ${color}`;
 
 const getPacmanStyle = (version: number) => ({
-	borderTop: version === 0 ? s1(size) : s2(size, color),
-	borderLeft: s2(size, color),
-	borderBottom: version === 0 ? s2(size, color) : s1(size),
-	borderRight: s1(size),
-	borderRadius: size,
+	position: 'absolute',
+	width: 0,
+	height: 0,
+	borderTop: version === 0 ? s1(sizeString) : s2(sizeString, color),
+	borderLeft: s2(sizeString, color),
+	borderBottom: version === 0 ? s2(sizeString, color) : s1(sizeString),
+	borderRight: s1(sizeString),
+	borderRadius: sizeString,
 	animation: `pacman${version} ease-in-out 0.8s infinite normal both running`,
 });
 
 const getBallStyle = (version: number) => ({
+	position: 'absolute',
+	top: sizeString,
+	left: `${sizeValue * 4}${sizeUnit}`,
+	width: `${sizeValue / 2.5}${sizeUnit}`,
+	height: `${sizeValue / 2.5}${sizeUnit}`,
+	margin,
+	borderRadius: '100%',
+	backgroundColor: color,
+	transform: `translate(0, ${-sizeValue / 4}${sizeUnit})`,
 	animation: `ballAnim 1s linear ${
 		version * 0.25
 	}s infinite normal both running`,
 });
+
+const wrapperStyle = $computed(() => ({
+	position: 'relative',
+	width: sizeString,
+	height: sizeString,
+	fontSize: 0,
+}));
 </script>
 
 <template>
-	<div class="wrapper">
-		<div class="pacman" :style="getPacmanStyle(0)"></div>
-		<div class="pacman" :style="getPacmanStyle(1)"></div>
-		<div
-			v-for="n in 4"
-			:key="n"
-			class="ball"
-			:style="getBallStyle(n + 2)"
-		></div>
+	<div :style="wrapperStyle">
+		<div :style="getPacmanStyle(0)"></div>
+		<div :style="getPacmanStyle(1)"></div>
+		<div v-for="n in 4" :key="n" :style="getBallStyle(n + 2)"></div>
 	</div>
 </template>
 
-<style scoped>
+<style>
 @keyframes pacman1 {
 	0% {
 		transform: rotate(0deg);
@@ -58,19 +79,6 @@ const getBallStyle = (version: number) => ({
 	}
 }
 
-.wrapper {
-	position: relative;
-	width: v-bind(size);
-	height: v-bind(size);
-	font-size: 0;
-}
-
-.pacman {
-	position: absolute;
-	width: 0;
-	height: 0;
-}
-
 @keyframes ballAnim {
 	75% {
 		opacity: 0.7;
@@ -78,17 +86,5 @@ const getBallStyle = (version: number) => ({
 	100% {
 		transform: translate(v-bind('-4 * size'), v-bind('-size / 4'));
 	}
-}
-
-.ball {
-	position: absolute;
-	top: v-bind(size);
-	left: v-bind('size * 4');
-	width: v-bind('size / 2.5');
-	height: v-bind('size / 2.5');
-	margin: v-bind(margin);
-	border-radius: 100%;
-	background-color: v-bind(color);
-	transform: translate(0, v-bind('-size / 4'));
 }
 </style>

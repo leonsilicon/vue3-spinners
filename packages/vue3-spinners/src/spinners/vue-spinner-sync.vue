@@ -1,11 +1,22 @@
 <script setup lang="ts">
+import { CSSProperties } from 'vue';
 import { useSpinnerProps } from '~/utils/props.js';
+import { useSizeProp } from '~/utils/size.js';
 
-const {
-	color, size, margin
-} = defineProps(useSpinnerProps({ size: '15px', margin: '2px' }));
+const { color, size, margin } = defineProps(
+	useSpinnerProps({ size: '15px', margin: '2px' })
+);
 
-const getCircleStyle = (version: number) => ({
+const { string: sizeString } = $(useSizeProp(() => size));
+
+const getCircleStyle = (version: number): CSSProperties => ({
+	display: 'inline-block',
+	width: sizeString,
+	height: sizeString,
+	margin,
+	borderRadius: '100%',
+	backgroundColor: color,
+	boxSizing: 'content-box',
 	animation: `sync 0.6s ease-in-out ${
 		version * 0.07
 	}s infinite normal both running`,
@@ -34,15 +45,5 @@ const getCircleStyle = (version: number) => ({
 	100% {
 		transform: translateY(0);
 	}
-}
-
-.circle {
-	display: inline-block;
-	width: v-bind(size);
-	height: v-bind(size);
-	margin: v-bind(margin);
-	border-radius: 100%;
-	background-color: v-bind(color);
-	box-sizing: content-box;
 }
 </style>

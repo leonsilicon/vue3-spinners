@@ -25,8 +25,8 @@ export function useSpinnerProps<T extends UseSpinnerPropsProps>(props: T) {
 		radius: { type: [String, Number], default: props.radius },
 	};
 
-	const actualProps = { ...defaultProps };
-	for (const prop of Object.keys(props)) {
+	const actualProps: any = { ...defaultProps };
+	for (const prop of Object.keys(props) as Array<keyof UseSpinnerPropsProps>) {
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 		actualProps[prop] = optionalProps[prop];
 	}

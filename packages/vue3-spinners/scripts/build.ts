@@ -7,14 +7,11 @@ import { chProjectDir, copyPackageFiles, rmDist } from 'lion-system';
 chProjectDir(import.meta.url);
 rmDist();
 
-await Promise.all(
-	await compileVueSFC({
-		declarations: true,
-		write: true,
-		files: globbySync(['./src/spinners/*.vue']),
-		projectRootPath: join(import.meta.url, '../..'),
-	})
-);
+await compileVueSFC({
+	declarations: true,
+	files: globbySync(['./src/spinners/*.vue']),
+	projectRootPath: join(import.meta.url, '../..'),
+});
 
 exec('tsc');
 exec('tsc-alias');

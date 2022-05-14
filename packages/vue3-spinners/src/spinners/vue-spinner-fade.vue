@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import zip from 'just-zip-it';
+import { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
 import { characterRange, range } from '~/utils/rgba.js';
@@ -19,11 +20,13 @@ const quarter = rad / 2 + rad / 5.5;
 
 const rows = zip(characterRange(`a`, `i`).split(``), range(9, 1));
 
-const wrapperStyle = {
+const wrapperStyle: CSSProperties = {
 	top: `${rad}px`,
 	left: `${rad}px`,
 	width: `${rad * 3}px`,
 	height: `${rad * 3}px`,
+	position: 'relative',
+	fontSize: 0,
 };
 
 const styles = {
@@ -67,19 +70,26 @@ const styles = {
 	},
 };
 
-const getBarStyle = (variation: string, version: number) => ({
+const getBarStyle = (variation: string, version: number): CSSProperties => ({
+	position: 'absolute',
+	width,
+	height,
+	margin,
+	backgroundColor: color,
+	borderRadius: radius,
+	transition: '2s',
+	animationFillMode: 'both',
 	animation: `fade 1.2s ${version * 0.12}s infinite ease-in-out`,
 	...styles[variation as keyof typeof styles],
 });
 </script>
 
 <template>
-	<div class="wrapper" :style="wrapperStyle">
+	<div :style="wrapperStyle">
 		<div
 			v-for="(row, i) in rows"
 			:key="i"
-			class="bar"
-			:style="getBarStyle(row, i)"
+			:style="getBarStyle(row[0], i)"
 		></div>
 	</div>
 </template>
@@ -87,26 +97,11 @@ const getBarStyle = (variation: string, version: number) => ({
 <style>
 @keyframes fade {
 	50% {
-		opacity: 0.3
+		opacity: 0.3;
 	}
 
 	100% {
-		opacity: 1
+		opacity: 1;
 	}
-}
-
-.wrapper {
-	position: relative;
-	font-size: 0;
-}
-
-.bar {
-	position: absolute;
-	width: v-bind(width);
-	height: v-bind(height);
-	margin: v-bind(margin);
-	background-color: v-bind(color);
-	border-radius: v-bind(radius) transition: 2s;
-	animation-fill-mode: 'both';
 }
 </style>

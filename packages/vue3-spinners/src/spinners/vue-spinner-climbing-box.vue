@@ -1,19 +1,72 @@
+<script setup lang="ts">
+import { CSSProperties } from 'vue';
+import { useSpinnerProps } from '~/utils/props.js';
+import { useSizeProp } from '~/utils/size.js';
+
+const { color, size } = defineProps(useSpinnerProps({ size: 15 }));
+
+const { string: sizeString } = $(useSizeProp(() => size));
+
+const containerStyle = $computed(
+	(): CSSProperties => ({
+		position: 'relative',
+		width: '7.1em',
+		height: '7.1em',
+	})
+);
+
+const wrapperStyle = $computed(
+	(): CSSProperties => ({
+		position: 'absolute',
+		top: '50%',
+		left: '50%',
+		marginTop: '-2.7em',
+		marginLeft: '-2.7em',
+		width: '5.4em',
+		height: '5.4em',
+		fontSize: sizeString,
+	})
+);
+
+const boxStyle = $computed(
+	(): CSSProperties => ({
+		position: 'absolute',
+		left: '0',
+		bottom: '-0.1em',
+		height: '1em',
+		width: '1em',
+		backgroundColor: 'transparent',
+		borderRadius: '15%',
+		border: `0.25em solid ${color}`,
+		transform: 'translate(0, -1em) rotate(-45deg)',
+		animationFillMode: 'both',
+		animation: 'climbingBox 2.5s infinite cubic-bezier(0.79, 0, 0.47, 0.97)',
+	})
+);
+
+const hillStyle = $computed(
+	(): CSSProperties => ({
+		position: 'absolute',
+		width: '7.1em',
+		height: '7.1em',
+		top: '1.7em',
+		left: '1.7em',
+		borderLeft: `0.25em solid ${color}`,
+		transform: 'rotate(45deg)',
+	})
+);
+</script>
+
 <template>
-	<div class="container">
-		<div class="wrapper">
-			<div class="box"></div>
-			<div class="hill"></div>
+	<div :style="containerStyle">
+		<div :style="wrapperStyle">
+			<div :style="boxStyle"></div>
+			<div :style="hillStyle"></div>
 		</div>
 	</div>
 </template>
 
-<script setup lang="ts">
-import { useSpinnerProps } from '~/utils/props.js';
-
-const { color, size } = defineProps(useSpinnerProps({ size: 15 }));
-</script>
-
-<style scoped>
+<style>
 @keyframes climbingBox {
 	0% {
 		transform: translate(0, -1em) rotate(-45deg);
@@ -48,46 +101,5 @@ const { color, size } = defineProps(useSpinnerProps({ size: 15 }));
 	100% {
 		transform: translate(0, -1em) rotate(-225deg);
 	}
-}
-
-.container {
-	position: relative;
-	width: 7.1em;
-	height: 7.1em;
-}
-
-.wrapper {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -2.7em;
-	margin-left: -2.7em;
-	width: 5.4em;
-	height: 5.4em;
-	font-size: v-bind(size);
-}
-
-.box {
-	position: absolute;
-	left: 0;
-	bottom: -0.1em;
-	height: 1em;
-	width: 1em;
-	background-color: transparent;
-	border-radius: 15%;
-	border: 0.25em solid v-bind(color);
-	transform: translate(0, -1em) rotate(-45deg);
-	animation-fill-mode: both;
-	animation: climbingBox 2.5s infinite cubic-bezier(0.79, 0, 0.47, 0.97);
-}
-
-.hill {
-	position: absolute;
-	width: 7.1em;
-	height: 7.1em;
-	top: 1.7em;
-	left: 1.7em;
-	border-left: 0.25em solid v-bind(color);
-	transform: rotate(45deg);
 }
 </style>

@@ -1,14 +1,21 @@
 <script setup lang="ts">
 import { useSpinnerProps } from '~/utils/props.js';
+import { useSizeProp } from '~/utils/size.js';
 
-const {
-	color,
-	size,
-	margin,
-} = defineProps(useSpinnerProps({ size: '15px', margin: '2px' }))
+const { color, size, margin } = defineProps(
+	useSpinnerProps({ size: '15px', margin: '2px' })
+);
 
+const { string: sizeString } = $(useSizeProp(() => size));
 
 const getCircleStyle = (version: number) => ({
+	display: 'inline-block',
+	width: sizeString,
+	height: sizeString,
+	margin,
+	borderRadius: '100%',
+	backgroundColor: color,
+	animationFillMode: 'both',
 	animation: `pulse 0.75s ${
 		version * 0.12
 	}s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08)`,
@@ -40,15 +47,5 @@ const getCircleStyle = (version: number) => ({
 		transform: scale(1);
 		opacity: 1;
 	}
-}
-
-.circle {
-	display: inline-block;
-	width: v-bind(size);
-	height: v-bind(size);
-	margin: v-bind(margin);
-	border-radius: 100%;
-	background-color: v-bind(color);
-	animation-fill-mode: both;
 }
 </style>

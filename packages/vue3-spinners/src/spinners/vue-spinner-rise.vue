@@ -1,13 +1,22 @@
 <script setup lang="ts">
-import { useSpinnerProps } from '~/utils/props.js'
+import { useSpinnerProps } from '~/utils/props.js';
+import { useSizeProp } from '~/utils/size.js';
 
-const {
-	color, size, margin
-} = defineProps(useSpinnerProps({ size: '15px', margin: '2px' }))
+const { color, size, margin } = defineProps(
+	useSpinnerProps({ size: '15px', margin: '2px' })
+);
+const { string: sizeString } = $(useSizeProp(() => size));
 
 const riseAmount = 30;
 
 const getCircleStyle = (version: number) => ({
+	display: 'inline-block',
+	width: sizeString,
+	height: sizeString,
+	margin,
+	borderRadius: '100%',
+	backgroundColor: color,
+	animationFillMode: 'both',
 	animation: `${
 		version % 2 === 0 ? 'even' : 'odd'
 	} 1s 0s infinite cubic-bezier(0.15, 0.46, 0.9, 0.6)`,
@@ -16,12 +25,7 @@ const getCircleStyle = (version: number) => ({
 
 <template>
 	<div>
-		<div
-			v-for="n in 5"
-			:key="n"
-			class="circle"
-			:style="getCircleStyle(n)"
-		></div>
+		<div v-for="n in 5" :key="n" :style="getCircleStyle(n)"></div>
 	</div>
 </template>
 
@@ -60,15 +64,5 @@ const getCircleStyle = (version: number) => ({
 	100% {
 		transform: translateY(0) scale(0.75);
 	}
-}
-
-.circle {
-	display: inline-block;
-	width: v-bind(size);
-	height: v-bind(size);
-	margin: v-bind(margin);
-	border-radius: 100%;
-	background-color: v-bind(color);
-	animation-fill-mode: both;
 }
 </style>
