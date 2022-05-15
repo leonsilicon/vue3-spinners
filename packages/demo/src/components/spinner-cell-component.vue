@@ -10,6 +10,8 @@ const { component } = defineProps<{
 <template>
 	<div class="column items-center gap-2 border-1 rounded-md p-5">
 		<div>{{ component.name }}</div>
-		<component :is="component" v-bind="componentProps"></component>
+		<div class="p-8">
+			<component :is="component" v-bind="componentProps"></component>
+		</div>
 	</div>
 </template>

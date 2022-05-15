@@ -92,8 +92,8 @@ const wrapperStyle = $computed(
 	}
 	100% {
 		transform: translate(
-			calc(-4 * v-bind('size')),
-			calc(-1 * v-bind('size') / 4)
+			v-bind('`${-4 * size.value}${size.unit}`'),
+			v-bind('`${-size.value / 4}${size.unit}`')
 		);
 	}
 }

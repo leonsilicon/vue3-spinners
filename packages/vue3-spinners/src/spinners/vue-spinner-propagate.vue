@@ -31,7 +31,8 @@ const getCircleStyle = (version: number): CSSProperties => ({
 	animation: `vue-spinner-propagate${version} 1.5s infinite`,
 });
 
-const getDistance = (index: number) => `${distance[index]!}rem`;
+const getDistance = (index: number, direction: 'left' | 'right') =>
+	`${distance[index]! * (direction === 'left' ? -1 : 1)}rem`;
 
 const wrapperStyle = $computed(
 	(): CSSProperties => ({
@@ -49,13 +50,13 @@ const wrapperStyle = $computed(
 <style>
 @keyframes vue-spinner-propagate0 {
 	25% {
-		transform: translateX(v-bind('-getDistance(0)')) scale(0.75);
+		transform: translateX(v-bind('getDistance(0, "left")')) scale(0.75);
 	}
 	50% {
-		transform: translateX(v-bind('-getDistance(1)')) scale(0.6);
+		transform: translateX(v-bind('getDistance(1, "left")')) scale(0.6);
 	}
 	75% {
-		transform: translateX(v-bind('-getDistance(2)')) scale(0.5);
+		transform: translateX(v-bind('getDistance(2, "left")')) scale(0.5);
 	}
 	95% {
 		transform: translateX(0rem) scale(1);
@@ -64,13 +65,13 @@ const wrapperStyle = $computed(
 
 @keyframes vue-spinner-propagate1 {
 	25% {
-		transform: translateX(v-bind('-getDistance(0)')) scale(0.75);
+		transform: translateX(v-bind('getDistance(0, "left")')) scale(0.75);
 	}
 	50% {
-		transform: translateX(v-bind('getDistance(1)')) scale(0.6);
+		transform: translateX(v-bind('getDistance(1, "left")')) scale(0.6);
 	}
 	75% {
-		transform: translateX(v-bind('getDistance(1)')) scale(0.6);
+		transform: translateX(v-bind('getDistance(1, "left")')) scale(0.6);
 	}
 	95% {
 		transform: translateX(0rem) scale(1);
@@ -79,10 +80,10 @@ const wrapperStyle = $computed(
 
 @keyframes vue-spinner-propagate2 {
 	25% {
-		transform: translateX(v-bind('-getDistance(0)')) scale(0.75);
+		transform: translateX(v-bind('getDistance(0, "left")')) scale(0.75);
 	}
 	75% {
-		transform: translateX(v-bind('-getDistance(0)')) scale(0.75);
+		transform: translateX(v-bind('getDistance(0, "left")')) scale(0.75);
 	}
 	95% {
 		transform: translateX(0rem) scale(1);
@@ -91,10 +92,10 @@ const wrapperStyle = $computed(
 
 @keyframes vue-spinner-propagate3 {
 	25% {
-		transform: translateX(v-bind('getDistance(0)')) scale(0.75);
+		transform: translateX(v-bind('getDistance(0, "right")')) scale(0.75);
 	}
 	75% {
-		transform: translateX(v-bind('getDistance(0)')) scale(0.75);
+		transform: translateX(v-bind('getDistance(0, "right")')) scale(0.75);
 	}
 	95% {
 		transform: translateX(0rem) scale(1);
@@ -103,13 +104,13 @@ const wrapperStyle = $computed(
 
 @keyframes vue-spinner-propagate4 {
 	25% {
-		transform: translateX(v-bind('getDistance(0)')) scale(0.75);
+		transform: translateX(v-bind('getDistance(0, "right")')) scale(0.75);
 	}
 	50% {
-		transform: translateX(v-bind('getDistance(1)')) scale(0.6);
+		transform: translateX(v-bind('getDistance(1, "right")')) scale(0.6);
 	}
 	75% {
-		transform: translateX(v-bind('getDistance(1)')) scale(0.6);
+		transform: translateX(v-bind('getDistance(1, "right")')) scale(0.6);
 	}
 	95% {
 		transform: translateX(0rem) scale(1);
@@ -118,13 +119,13 @@ const wrapperStyle = $computed(
 
 @keyframes vue-spinner-propagate5 {
 	25% {
-		transform: translateX(v-bind('getDistance(0)')) scale(0.75);
+		transform: translateX(v-bind('getDistance(0, "right")')) scale(0.75);
 	}
 	50% {
-		transform: translateX(v-bind('getDistance(1)')) scale(0.6);
+		transform: translateX(v-bind('getDistance(1, "right")')) scale(0.6);
 	}
 	75% {
-		transform: translateX(v-bind('getDistance(2)')) scale(0.5);
+		transform: translateX(v-bind('getDistance(2, "right")')) scale(0.5);
 	}
 	95% {
 		transform: translateX(0rem) scale(1);

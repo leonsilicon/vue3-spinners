@@ -7,6 +7,8 @@ const { name } = defineProps<{
 <template>
 	<div class="column items-center gap-2 border-1 rounded-md p-5">
 		<div>{{ name }}</div>
-		<slot></slot>
+		<div class="p-8">
+			<slot></slot>
+		</div>
 	</div>
 </template>
