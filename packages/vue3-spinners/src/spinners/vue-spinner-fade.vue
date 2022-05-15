@@ -1,3 +1,7 @@
+<script lang="ts">
+export default { name: 'VueSpinnerFade' };
+</script>
+
 <script setup lang="ts">
 import zip from 'just-zip-it';
 import type { CSSProperties } from 'vue';

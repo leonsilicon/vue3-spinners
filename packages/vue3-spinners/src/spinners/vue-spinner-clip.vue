@@ -1,3 +1,7 @@
+<script lang="ts">
+export default { name: 'VueSpinnerClip' };
+</script>
+
 <template>
 	<div :style="ringStyle"></div>
 </template>

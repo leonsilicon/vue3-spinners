@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" name="VueSpinnerBeat">
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';

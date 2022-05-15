@@ -22,7 +22,7 @@ const svg = [
 					{
 						x: '15',
 						y: '20',
-						width: ' 70',
+						width: '70',
 						height: '25',
 					},
 					[
@@ -59,7 +59,7 @@ const svg = [
 					{
 						x: '15',
 						y: '55',
-						width: ' 70',
+						width: '7 0',
 						height: '25',
 					},
 					[

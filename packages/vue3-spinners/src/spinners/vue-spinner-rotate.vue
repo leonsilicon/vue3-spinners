@@ -1,3 +1,7 @@
+<script lang="ts">
+export default { name: 'VueSpinnerRotate' };
+</script>
+
 <script setup lang="ts">
 import type { CSSProperties } from 'vue';
 

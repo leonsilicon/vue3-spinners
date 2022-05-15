@@ -1,3 +1,7 @@
+<script lang="ts">
+export default { name: 'VueSpinnerScale' };
+</script>
+
 <script setup lang="ts">
 import { useSpinnerProps } from '~/utils/props.js';
 

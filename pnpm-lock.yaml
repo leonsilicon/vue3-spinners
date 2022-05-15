@@ -44,7 +44,7 @@ importers:
     specifiers:
       '@types/parse-unit': ^1.0.1
       '@vue/runtime-core': ^3.2.33
-      compile-vue-sfc: ^0.1.6
+      compile-vue-sfc: ^0.1.7
       desm: ^1.2.0
       execa: ^6.1.0
       globby: ^13.1.1
@@ -66,7 +66,7 @@ importers:
     devDependencies:
       '@types/parse-unit': 1.0.1
       '@vue/runtime-core': 3.2.33
-      compile-vue-sfc: 0.1.6_ytvqwwdyss532bvoq2clv4ed5m
+      compile-vue-sfc: 0.1.7_ytvqwwdyss532bvoq2clv4ed5m
       desm: 1.2.0
       execa: 6.1.0
       globby: 13.1.1
@@ -1570,8 +1570,8 @@ packages:
       dot-prop: 5.3.0
     dev: true
 
-  /compile-vue-sfc/0.1.6_ytvqwwdyss532bvoq2clv4ed5m:
-    resolution: {integrity: sha512-JGnuLy2yiyNXf0YSK4gL8HGcRjEPUVrYJgX4MzLY4nsJbA94ffsdp1bSxn71aLteJ9VyawMH/2I8k3dVaaw7Cg==}
+  /compile-vue-sfc/0.1.7_ytvqwwdyss532bvoq2clv4ed5m:
+    resolution: {integrity: sha512-bV08fvVqKmEqDiRQ6rjLB8jvTawL6foC9yYVmqyDIQTqEZ3jf9KsxPLOYZe9W2k5GuSbVcHy2e9FHI2qQvAZ1A==}
     hasBin: true
     dependencies:
       '@babel/types': 7.17.10
@@ -1584,12 +1584,13 @@ packages:
       is-path-inside: 4.0.0
       pkg-up: 4.0.0
       rollup: 2.73.0
-      rollup-plugin-js-imports: 1.2.0_vite@2.9.9
+      rollup-plugin-js-imports: 1.2.1
       rollup-plugin-styles: 4.0.0_rollup@2.73.0
       signal-exit: 3.0.7
       tmp-promise: 3.0.3
       tsconfig: 7.0.0
       vite: 2.9.9
+      vite-plugin-vue-setup-extend: 0.4.0_vite@2.9.9
       vue-tsc: 0.34.13_typescript@4.6.4
     transitivePeerDependencies:
       - less
@@ -5862,14 +5863,6 @@ packages:
       read-pkg: 7.1.0
       resolve: 1.22.0
 
-  /rollup-plugin-js-imports/1.2.0_vite@2.9.9:
-    resolution: {integrity: sha512-XcO2XqttJyyuH6fPaE/xwr7u+SE+oTsjelv59CZBuiNv8MQuYZG+5XwePdQ5E77B/tGRbKCG5ZaWqmk9y9EeVA==}
-    peerDependencies:
-      vite: ^2.9.0
-    dependencies:
-      vite: 2.9.9
-    dev: true
-
   /rollup-plugin-js-imports/1.2.1:
     resolution: {integrity: sha512-PRnquQCXgQdW0tWlQGgUkpZTGNti0B3TSm/b+NfkqzLJCXsSyKhVy6iM4jBpmWo5yvi1qTuONwAjW1m4A2k9pQ==}
     dev: true
@@ -6600,6 +6593,16 @@ packages:
     resolution: {integrity: sha1-X6kS2B630MdK/BQN5zF/DKffQ34=}
     dependencies:
       builtins: 1.0.3
+    dev: true
+
+  /vite-plugin-vue-setup-extend/0.4.0_vite@2.9.9:
+    resolution: {integrity: sha512-WMbjPCui75fboFoUTHhdbXzu4Y/bJMv5N9QT9a7do3wNMNHHqrk+Tn2jrSJU0LS5fGl/EG+FEDBYVUeWIkDqXQ==}
+    peerDependencies:
+      vite: '>=2.0.0'
+    dependencies:
+      '@vue/compiler-sfc': 3.2.33
+      magic-string: 0.25.9
+      vite: 2.9.9
     dev: true
 
   /vite-plugin-windicss/1.8.4_vite@2.9.9:
