@@ -8,8 +8,8 @@ import type { CSSProperties } from 'vue';
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
-const { size, color } = defineProps(useSpinnerProps({ size: 50 }));
-const { unit, value, string: sizeString } = $(useSize(() => size));
+const { size: sizeProp, color } = defineProps(useSpinnerProps({ size: 50 }));
+const size = $(useSize(() => sizeProp));
 
 const getRingStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
@@ -19,18 +19,18 @@ const getRingStyle = (version: number): CSSProperties => ({
 	borderBottom: 'none',
 	borderRight: 'none',
 	animationFillMode: '',
-	height: `${value * (1 - version / 10)}${unit}`,
-	width: `${value * (1 - version / 10)}${unit}`,
+	height: `${size.value * (1 - version / 10)}${size.unit}`,
+	width: `${size.value * (1 - version / 10)}${size.unit}`,
 	top: `${version * 0.7 * 2.5}%`,
 	left: `${version * 0.35 * 2.5}%`,
-	animation: `circle 1s ${version * 0.2}s infinite linear`,
+	animation: `vue-spinner-circle 1s ${version * 0.2}s infinite linear`,
 });
 
 const wrapperStyle = $computed(
 	(): CSSProperties => ({
 		position: 'relative',
-		width: sizeString,
-		height: sizeString,
+		width: size.string,
+		height: size.string,
 	})
 );
 </script>
@@ -42,7 +42,7 @@ const wrapperStyle = $computed(
 </template>
 
 <style>
-@keyframes circle {
+@keyframes vue-spinner-circle {
 	0% {
 		transform: rotate(0deg);
 	}

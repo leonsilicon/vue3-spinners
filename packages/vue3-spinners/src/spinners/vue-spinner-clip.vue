@@ -10,25 +10,25 @@ export default { name: 'VueSpinnerClip' };
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
-const { color, size } = defineProps(useSpinnerProps({ size: 35 }));
+const { color, size: sizeProp } = defineProps(useSpinnerProps({ size: 35 }));
 
-const { string: sizeString } = $(useSize(() => size));
+const size = $(useSize(() => sizeProp));
 
 const ringStyle = $computed(() => ({
 	background: 'transparent !important',
-	width: sizeString,
-	height: sizeString,
+	width: size.string,
+	height: size.string,
 	borderRadius: '100%',
 	border: `2px solid ${color}`,
 	borderBottomColor: 'transparent',
 	display: 'inline-block',
-	animation: 'clip 0.75s 0s infinite linear',
+	animation: 'vue-spinner-clip 0.75s 0s infinite linear',
 	animationFillMode: 'both',
 }));
 </script>
 
 <style>
-@keyframes clip {
+@keyframes vue-spinner-clip {
 	0% {
 		transform: rotate(0deg) scale(1);
 	}

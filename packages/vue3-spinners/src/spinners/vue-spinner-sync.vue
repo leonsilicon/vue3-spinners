@@ -8,21 +8,24 @@ import type { CSSProperties } from 'vue';
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
-const { color, size, margin } = defineProps(
-	useSpinnerProps({ size: '15px', margin: '2px' })
-);
+const {
+	color,
+	size: sizeProp,
+	margin: marginProp,
+} = defineProps(useSpinnerProps({ size: '15px', margin: '2px' }));
 
-const { string: sizeString } = $(useSize(() => size));
+const size = $(useSize(() => sizeProp));
+const margin = $(useSize(() => marginProp));
 
 const getCircleStyle = (version: number): CSSProperties => ({
 	display: 'inline-block',
-	width: sizeString,
-	height: sizeString,
-	margin,
+	width: size.string,
+	height: size.string,
+	margin: margin.string,
 	borderRadius: '100%',
 	backgroundColor: color,
 	boxSizing: 'content-box',
-	animation: `sync 0.6s ease-in-out ${
+	animation: `vue-spinner-sync 0.6s ease-in-out ${
 		version * 0.07
 	}s infinite normal both running`,
 });
@@ -40,7 +43,7 @@ const getCircleStyle = (version: number): CSSProperties => ({
 </template>
 
 <style>
-@keyframes sync {
+@keyframes vue-spinner-sync {
 	33% {
 		transform: translateY(10px);
 	}

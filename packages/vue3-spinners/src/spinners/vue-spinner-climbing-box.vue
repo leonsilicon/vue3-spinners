@@ -8,9 +8,9 @@ import type { CSSProperties } from 'vue';
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
-const { color, size } = defineProps(useSpinnerProps({ size: 15 }));
+const { color, size: sizeProp } = defineProps(useSpinnerProps({ size: 15 }));
 
-const { string: sizeString } = $(useSize(() => size));
+const size = $(useSize(() => sizeProp))
 
 const containerStyle = $computed(
 	(): CSSProperties => ({
@@ -29,7 +29,7 @@ const wrapperStyle = $computed(
 		marginLeft: '-2.7em',
 		width: '5.4em',
 		height: '5.4em',
-		fontSize: sizeString,
+		fontSize: size.string,
 	})
 );
 
@@ -45,7 +45,7 @@ const boxStyle = $computed(
 		border: `0.25em solid ${color}`,
 		transform: 'translate(0, -1em) rotate(-45deg)',
 		animationFillMode: 'both',
-		animation: 'climbingBox 2.5s infinite cubic-bezier(0.79, 0, 0.47, 0.97)',
+		animation: 'vue-spinner-climbing-box 2.5s infinite cubic-bezier(0.79, 0, 0.47, 0.97)',
 	})
 );
 
@@ -72,7 +72,7 @@ const hillStyle = $computed(
 </template>
 
 <style>
-@keyframes climbingBox {
+@keyframes vue-spinner-climbing-box {
 	0% {
 		transform: translate(0, -1em) rotate(-45deg);
 	}

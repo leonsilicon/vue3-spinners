@@ -9,18 +9,20 @@ import { useSpinnerProps } from '~/utils/props.js';
 import { calculateRgba } from '~/utils/rgba.js';
 import { useSize } from '~/utils/size.js';
 
-const { color, width, height } = defineProps(
-	useSpinnerProps({ height: 4, width: 100 })
-);
+const {
+	color,
+	width: widthProp,
+	height: heightProp,
+} = defineProps(useSpinnerProps({ height: 4, width: 100 }));
 
-const { string: widthString } = $(useSize(() => width));
-const { string: heightString } = $(useSize(() => height));
+const width = $(useSize(() => widthProp));
+const height = $(useSize(() => heightProp));
 
 const wrapperStyle = $computed(
 	(): CSSProperties => ({
 		position: 'relative',
-		width: widthString,
-		height: heightString,
+		width: width.string,
+		height: height.string,
 		overflow: 'hidden',
 		backgroundColor: calculateRgba(color, 0.2),
 		backgroundClip: 'padding-box',
@@ -29,7 +31,7 @@ const wrapperStyle = $computed(
 
 const getBarStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
-	height: heightString,
+	height: height.string,
 	overflow: 'hidden',
 	backgroundColor: color,
 	backgroundClip: 'padding-box',
@@ -37,9 +39,9 @@ const getBarStyle = (version: number): CSSProperties => ({
 	borderRadius: '2px',
 	willChange: 'left, right',
 	animationFillMode: 'forwards',
-	animation: ` ${version === 1 ? 'long' : 'short'} 2.1s ${
-		version === 2 ? `1.15s` : ``
-	} ${
+	animation: ` ${
+		version === 1 ? 'vue-spinner-long' : 'vue-spinner-short'
+	} 2.1s ${version === 2 ? `1.15s` : ``} ${
 		version === 1
 			? `cubic-bezier(0.65, 0.815, 0.735, 0.395)`
 			: `cubic-bezier(0.165, 0.84, 0.44, 1)`
@@ -54,7 +56,7 @@ const getBarStyle = (version: number): CSSProperties => ({
 </template>
 
 <style>
-@keyframes long {
+@keyframes vue-spinner-long {
 	0% {
 		left: -35%;
 		right: 100%;
@@ -69,7 +71,7 @@ const getBarStyle = (version: number): CSSProperties => ({
 	}
 }
 
-@keyframes short {
+@keyframes vue-spinner-short {
 	0% {
 		left: -200%;
 		right: 100%;

@@ -11,14 +11,11 @@ import { useSize } from '~/utils/size.js';
 const {
 	size: sizeProp,
 	color,
-	margin,
+	margin: marginProp,
 } = defineProps(useSpinnerProps({ size: '25px', margin: '2px' }));
 
-const {
-	value: sizeValue,
-	unit: sizeUnit,
-	string: sizeString,
-} = $(useSize(() => sizeProp));
+const size = $(useSize(() => sizeProp));
+const margin = $(useSize(() => marginProp));
 
 const s1 = (size: string) => `${size} solid transparent`;
 const s2 = (size: string, color: string) => `${size} solid ${color}`;
@@ -27,25 +24,25 @@ const getPacmanStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
 	width: 0,
 	height: 0,
-	borderTop: version === 0 ? s1(sizeString) : s2(sizeString, color),
-	borderLeft: s2(sizeString, color),
-	borderBottom: version === 0 ? s2(sizeString, color) : s1(sizeString),
-	borderRight: s1(sizeString),
-	borderRadius: sizeString,
-	animation: `pacman${version} ease-in-out 0.8s infinite normal both running`,
+	borderTop: version === 0 ? s1(size.string) : s2(size.string, color),
+	borderLeft: s2(size.string, color),
+	borderBottom: version === 0 ? s2(size.string, color) : s1(size.string),
+	borderRight: s1(size.string),
+	borderRadius: size.string,
+	animation: `vue-spinner-pacman${version} ease-in-out 0.8s infinite normal both running`,
 });
 
 const getBallStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
-	top: sizeString,
-	left: `${sizeValue * 4}${sizeUnit}`,
-	width: `${sizeValue / 2.5}${sizeUnit}`,
-	height: `${sizeValue / 2.5}${sizeUnit}`,
-	margin,
+	top: size.string,
+	left: `${size.value * 4}${size.unit}`,
+	width: `${size.value / 2.5}${size.unit}`,
+	height: `${size.value / 2.5}${size.unit}`,
+	margin: margin.string,
 	borderRadius: '100%',
 	backgroundColor: color,
-	transform: `translate(0, ${-sizeValue / 4}${sizeUnit})`,
-	animation: `ballAnim 1s linear ${
+	transform: `translate(0, ${-size.value / 4}${size.unit})`,
+	animation: `vue-spinner-pacman-ball-animation 1s linear ${
 		version * 0.25
 	}s infinite normal both running`,
 });
@@ -53,8 +50,8 @@ const getBallStyle = (version: number): CSSProperties => ({
 const wrapperStyle = $computed(
 	(): CSSProperties => ({
 		position: 'relative',
-		width: sizeString,
-		height: sizeString,
+		width: size.string,
+		height: size.string,
 		fontSize: 0,
 	})
 );
@@ -69,7 +66,7 @@ const wrapperStyle = $computed(
 </template>
 
 <style>
-@keyframes pacman1 {
+@keyframes vue-spinner-pacman1 {
 	0% {
 		transform: rotate(0deg);
 	}
@@ -78,7 +75,7 @@ const wrapperStyle = $computed(
 	}
 }
 
-@keyframes pacman2 {
+@keyframes vue-spinner-pacman2 {
 	0% {
 		transform: rotate(0deg);
 	}
@@ -87,12 +84,15 @@ const wrapperStyle = $computed(
 	}
 }
 
-@keyframes ballAnim {
+@keyframes vue-spinner-pacman-ball-animation {
 	75% {
 		opacity: 0.7;
 	}
 	100% {
-		transform: translate(calc(-4 * v-bind('size')), calc(-1 * v-bind('size') / 4));
+		transform: translate(
+			calc(-4 * v-bind('size')),
+			calc(-1 * v-bind('size') / 4)
+		);
 	}
 }
 </style>

@@ -8,8 +8,15 @@ import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
 import { characterRange, range } from '~/utils/rgba.js';
+import { useSize } from '~/utils/size.js';
 
-const { color, height, width, margin, radius } = defineProps(
+const {
+	color,
+	height: heightProp,
+	width: widthProp,
+	margin: marginProp,
+	radius: radiusProp,
+} = defineProps(
 	useSpinnerProps({
 		color: '#000000',
 		height: '15px',
@@ -18,6 +25,11 @@ const { color, height, width, margin, radius } = defineProps(
 		radius: '2px',
 	})
 );
+
+const height = $(useSize(() => heightProp));
+const width = $(useSize(() => widthProp));
+const margin = $(useSize(() => marginProp));
+const radius = $(useSize(() => radiusProp));
 
 const rad = 20;
 const quarter = rad / 2 + rad / 5.5;
@@ -76,14 +88,14 @@ const styles = {
 
 const getBarStyle = (variation: string, version: number): CSSProperties => ({
 	position: 'absolute',
-	width,
-	height,
-	margin,
+	width: width.string,
+	height: height.string,
+	margin: margin.string,
 	backgroundColor: color,
-	borderRadius: radius,
+	borderRadius: radius.string,
 	transition: '2s',
 	animationFillMode: 'both',
-	animation: `fade 1.2s ${version * 0.12}s infinite ease-in-out`,
+	animation: `vue-spinner-fade 1.2s ${version * 0.12}s infinite ease-in-out`,
 	...styles[variation as keyof typeof styles],
 });
 </script>
@@ -99,7 +111,7 @@ const getBarStyle = (variation: string, version: number): CSSProperties => ({
 </template>
 
 <style>
-@keyframes fade {
+@keyframes vue-spinner-fade {
 	50% {
 		opacity: 0.3;
 	}

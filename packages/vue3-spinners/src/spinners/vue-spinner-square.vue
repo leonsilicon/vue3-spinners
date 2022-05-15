@@ -6,16 +6,19 @@ export default { name: 'VueSpinnerSquare' };
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
-const { color, size } = defineProps(useSpinnerProps({ size: '50px' }));
+const { color, size: sizeProp } = defineProps(
+	useSpinnerProps({ size: '50px' })
+);
 
-const { string: sizeString } = $(useSize(() => size));
+const size = $(useSize(() => sizeProp));
 
 const squareStyle = $computed(() => ({
 	display: 'inline-block',
-	width: sizeString,
-	height: sizeString,
+	width: size.string,
+	height: size.string,
 	backgroundColor: color,
-	animation: 'square 3s 0s infinite cubic-bezier(0.09, 0.57, 0.49, 0.9)',
+	animation:
+		'vue-spinner-square 3s 0s infinite cubic-bezier(0.09, 0.57, 0.49, 0.9)',
 	animationFillMode: 'both',
 }));
 </script>
@@ -25,7 +28,7 @@ const squareStyle = $computed(() => ({
 </template>
 
 <style>
-@keyframes square {
+@keyframes vue-spinner-square {
 	25% {
 		transform: rotateX(180deg) rotateY(0);
 	}

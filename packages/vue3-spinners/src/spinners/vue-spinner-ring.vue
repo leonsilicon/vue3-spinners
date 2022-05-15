@@ -8,32 +8,32 @@ import type { CSSProperties } from 'vue';
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
-const { color, size } = defineProps(useSpinnerProps({ size: '60px' }));
-const {
-	string: sizeString,
-	value: sizeValue,
-	unit: sizeUnit,
-} = $(useSize(() => size));
+const { color, size: sizeProp } = defineProps(
+	useSpinnerProps({ size: '60px' })
+);
+const size = $(useSize(() => sizeProp));
 
 const getRingStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
 	top: '0',
 	left: '0',
-	width: sizeString,
-	height: sizeString,
-	border: `${sizeValue / 10}${sizeUnit} solid ${color}`,
+	width: size.string,
+	height: size.string,
+	border: `${size.value / 10}${size.unit} solid ${color}`,
 	borderRadius: '100%',
 	opacity: '0.4',
 	animationFillMode: 'forwards',
 	perspective: '800px',
-	animation: `${version === 1 ? 'right' : 'left'} 2s 0s infinite linear`,
+	animation: `${
+		version === 1 ? 'vue-spinner-right' : 'vue-spinner-left'
+	} 2s 0s infinite linear`,
 });
 
 const wrapperStyle = $computed(
 	(): CSSProperties => ({
 		position: 'relative',
-		width: sizeString,
-		height: sizeString,
+		width: size.string,
+		height: size.string,
 	})
 );
 </script>
@@ -45,7 +45,7 @@ const wrapperStyle = $computed(
 </template>
 
 <style>
-@keyframes right {
+@keyframes vue-spinner-right {
 	0% {
 		transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
 	}
@@ -54,7 +54,7 @@ const wrapperStyle = $computed(
 	}
 }
 
-@keyframes left {
+@keyframes vue-spinner-left {
 	0% {
 		transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
 	}

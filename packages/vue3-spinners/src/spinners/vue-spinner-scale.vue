@@ -3,9 +3,18 @@ export default { name: 'VueSpinnerScale' };
 </script>
 
 <script setup lang="ts">
-import { useSpinnerProps } from '~/utils/props.js';
+import type { CSSProperties } from 'vue';
 
-const { color, height, width, radius, margin } = defineProps(
+import { useSpinnerProps } from '~/utils/props.js';
+import { useSize } from '~/utils/size.js';
+
+const {
+	color,
+	height: heightProp,
+	width: widthProp,
+	radius: radiusProp,
+	margin: marginProp,
+} = defineProps(
 	useSpinnerProps({
 		height: '35px',
 		width: '4px',
@@ -14,14 +23,19 @@ const { color, height, width, radius, margin } = defineProps(
 	})
 );
 
-const getBarStyle = (version: number) => ({
+const width = $(useSize(() => widthProp));
+const height = $(useSize(() => heightProp));
+const radius = $(useSize(() => radiusProp));
+const margin = $(useSize(() => marginProp));
+
+const getBarStyle = (version: number): CSSProperties => ({
 	display: 'inline-block',
-	width,
-	height,
-	margin,
-	borderRadius: radius,
+	width: width.string,
+	height: height.string,
+	margin: margin.string,
+	borderRadius: radius.string,
 	backgroundColor: color,
-	animation: `scale 1s cubic-bezier(0.2, 0.68, 0.18, 1.08) ${
+	animation: `vue-spinner-scale 1s cubic-bezier(0.2, 0.68, 0.18, 1.08) ${
 		version * 0.1
 	}s infinite normal both running`,
 });
@@ -34,7 +48,7 @@ const getBarStyle = (version: number) => ({
 </template>
 
 <style>
-@keyframes scale {
+@keyframes vue-spinner-scale {
 	0% {
 		transform: scaleY(1);
 	}

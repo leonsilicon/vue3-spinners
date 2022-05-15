@@ -8,30 +8,26 @@ import type { CSSProperties } from 'vue';
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
-const { color, size } = defineProps(
+const { color, size: sizeProp } = defineProps(
 	useSpinnerProps({
 		size: '15px',
 	})
 );
 
-const {
-	string: sizeString,
-	unit: sizeUnit,
-	value: sizeValue,
-} = $(useSize(() => size));
+const size = $(useSize(() => sizeProp));
 
 // 1.5 4.5 7.5
 const distance = [1, 3, 5];
 
 const getCircleStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
-	width: sizeString,
-	height: sizeString,
+	width: size.string,
+	height: size.string,
 	borderRadius: '50%',
 	background: color,
-	fontSize: `${sizeValue / 3}${sizeUnit}`,
+	fontSize: `${size.value / 3}${size.unit}`,
 	animationFillMode: 'forwards',
-	animation: `propagate${version} 1.5s infinite`,
+	animation: `vue-spinner-propagate${version} 1.5s infinite`,
 });
 
 const getDistance = (index: number) => `${distance[index]!}rem`;
@@ -50,7 +46,7 @@ const wrapperStyle = $computed(
 </template>
 
 <style>
-@keyframes propagate0 {
+@keyframes vue-spinner-propagate0 {
 	25% {
 		transform: translateX(v-bind('-getDistance(0)')) scale(0.75);
 	}
@@ -65,7 +61,7 @@ const wrapperStyle = $computed(
 	}
 }
 
-@keyframes propagate1 {
+@keyframes vue-spinner-propagate1 {
 	25% {
 		transform: translateX(v-bind('-getDistance(0)')) scale(0.75);
 	}
@@ -80,7 +76,7 @@ const wrapperStyle = $computed(
 	}
 }
 
-@keyframes propagate2 {
+@keyframes vue-spinner-propagate2 {
 	25% {
 		transform: translateX(v-bind('-getDistance(0)')) scale(0.75);
 	}
@@ -92,7 +88,7 @@ const wrapperStyle = $computed(
 	}
 }
 
-@keyframes propagate3 {
+@keyframes vue-spinner-propagate3 {
 	25% {
 		transform: translateX(v-bind('getDistance(0)')) scale(0.75);
 	}
@@ -104,7 +100,7 @@ const wrapperStyle = $computed(
 	}
 }
 
-@keyframes propagate4 {
+@keyframes vue-spinner-propagate4 {
 	25% {
 		transform: translateX(v-bind('getDistance(0)')) scale(0.75);
 	}
@@ -119,7 +115,7 @@ const wrapperStyle = $computed(
 	}
 }
 
-@keyframes propagate5 {
+@keyframes vue-spinner-propagate5 {
 	25% {
 		transform: translateX(v-bind('getDistance(0)')) scale(0.75);
 	}

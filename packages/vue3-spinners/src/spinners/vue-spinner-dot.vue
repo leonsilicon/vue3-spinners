@@ -8,32 +8,30 @@ import type { CSSProperties } from 'vue';
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
-const { color, size } = defineProps(useSpinnerProps({ size: 60 }));
-const {
-	string: sizeString,
-	value: sizeValue,
-	unit: sizeUnit,
-} = $(useSize(() => size));
+const { color, size: sizeProp } = defineProps(useSpinnerProps({ size: 60 }));
+const size = $(useSize(() => sizeProp));
 
 const getCircleStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
-	height: `${sizeValue / 2}${sizeUnit}`,
-	width: `${sizeValue / 2}${sizeUnit}`,
+	height: `${size.value / 2}${size.unit}`,
+	width: `${size.value / 2}${size.unit}`,
 	backgroundColor: color,
 	borderRadius: '100%',
 	animationFillMode: 'forwards',
 	top: version % 2 ? '0' : 'auto',
 	bottom: version % 2 ? `auto` : `0`,
-	animation: `bounce 2s ${version === 2 ? `-1s` : `0s`} infinite linear`,
+	animation: `vue-spinner-bounce 2s ${
+		version === 2 ? `-1s` : `0s`
+	} infinite linear`,
 });
 
 const wrapperStyle = $computed(
 	(): CSSProperties => ({
 		position: 'relative',
-		width: sizeString,
-		height: sizeString,
+		width: size.string,
+		height: size.string,
 		animationFillMode: 'forwards',
-		animation: 'rotate 2s 0s infinite linear',
+		animation: 'vue-spinner-rotate 2s 0s infinite linear',
 	})
 );
 </script>
@@ -45,13 +43,13 @@ const wrapperStyle = $computed(
 </template>
 
 <style>
-@keyframes rotate {
+@keyframes vue-spinner-rotate {
 	100% {
 		transform: rotate(360deg);
 	}
 }
 
-@keyframes bounce {
+@keyframes vue-spinner-bounce {
 	0%,
 	100% {
 		transform: scale(0);

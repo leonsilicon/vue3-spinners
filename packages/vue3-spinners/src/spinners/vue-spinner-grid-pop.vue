@@ -8,25 +8,28 @@ import { useSize } from '~/utils/size.js';
 
 const random = (top: number) => Math.random() * top;
 
-const { color, size, margin } = defineProps(
-	useSpinnerProps({ size: 15, margin: '2px' })
-);
+const {
+	color,
+	size: sizeProp,
+	margin: marginProp,
+} = defineProps(useSpinnerProps({ size: 15, margin: '2px' }));
 
-const { string: sizeString } = $(useSize(() => size));
+const size = $(useSize(() => sizeProp));
+const margin = $(useSize(() => marginProp));
 
-const wrapperWidth = $computed(
-	() => Number.parseFloat(String(size)) * 3 + Number.parseFloat(margin) * 6
-);
+const wrapperWidth = $computed(() => size.value * 3 + margin.value * 6);
 
 const getCircleStyle = (rand: number) => ({
 	display: 'inline-block',
 	backgroundColor: color,
-	width: sizeString,
-	height: sizeString,
-	margin,
+	width: size.string,
+	height: size.string,
+	margin: margin.string,
 	borderRadius: '100%',
 	animationFillMode: 'both',
-	animation: `grid ${rand / 100 + 0.6}s ${rand / 100 - 0.2}s infinite ease`,
+	animation: `vue-spinner-grid ${rand / 100 + 0.6}s ${
+		rand / 100 - 0.2
+	}s infinite ease`,
 });
 
 const wrapperStyle = $computed(() => ({
@@ -42,7 +45,7 @@ const wrapperStyle = $computed(() => ({
 </template>
 
 <style>
-@keyframes grid {
+@keyframes vue-spinner-grid {
 	0% {
 		transform: scale(1);
 	}

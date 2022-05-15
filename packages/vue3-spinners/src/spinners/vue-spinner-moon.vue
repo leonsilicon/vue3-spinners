@@ -9,20 +9,16 @@ import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
 const { color, size: sizeProp } = defineProps(useSpinnerProps({ size: 60 }));
-const {
-	value: sizeValue,
-	unit: sizeUnit,
-	string: sizeString,
-} = $(useSize(() => sizeProp));
+const size = $(useSize(() => sizeProp));
 
 const moonSize = (size: number) => size / 7;
 
 const wrapperStyle = $computed(
 	(): CSSProperties => ({
 		position: 'relative',
-		width: `${sizeValue + moonSize(sizeValue) * 2}${sizeUnit}`,
-		height: `${sizeValue + moonSize(sizeValue) * 2}${sizeUnit}`,
-		animation: 'moon 0.6s linear 0s infinite normal forwards running',
+		width: `${size.value + moonSize(size.value) * 2}${size.unit}`,
+		height: `${size.value + moonSize(size.value) * 2}${size.unit}`,
+		animation: 'vue-spinner-moon 0.6s linear 0s infinite normal forwards running',
 		boxSizing: 'content-box',
 	})
 );
@@ -30,27 +26,27 @@ const wrapperStyle = $computed(
 const moonStyle = $computed(
 	(): CSSProperties => ({
 		position: 'absolute',
-		top: `${sizeValue / 2 - moonSize(sizeValue)}${sizeUnit}`,
+		top: `${size.value / 2 - moonSize(size.value)}${size.unit}`,
 		backgroundColor: color,
 		opacity: 0.8,
-		animation: 'moon 0.6s linear 0s infinite normal forwards running',
+		animation: 'vue-spinner-moon 0.6s linear 0s infinite normal forwards running',
 		boxSizing: 'content-box',
-		width: sizeString,
-		height: sizeString,
+		width: size.string,
+		height: size.string,
 		borderRadius: '100%',
 	})
 );
 
 const ringStyle = $computed(
 	(): CSSProperties => ({
-		borderWidth: `${moonSize(sizeValue)}${sizeUnit}`,
+		borderWidth: `${moonSize(size.value)}${size.unit}`,
 		borderStyle: 'solid',
 		borderColor: color,
 		borderImage: 'initial',
 		opacity: '0.1',
 		boxSizing: 'content-box',
-		width: sizeString,
-		height: sizeString,
+		width: size.string,
+		height: size.string,
 		borderRadius: '100%',
 	})
 );
@@ -64,7 +60,7 @@ const ringStyle = $computed(
 </template>
 
 <style>
-@keyframes moon {
+@keyframes vue-spinner-moon {
 	100% {
 		transform: rotate(360deg);
 	}

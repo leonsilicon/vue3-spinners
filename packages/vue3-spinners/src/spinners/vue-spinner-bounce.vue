@@ -8,27 +8,27 @@ import type { CSSProperties } from 'vue';
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
-const { size, color } = defineProps(useSpinnerProps({ size: 60 }));
-const { string: sizeString } = $(useSize(() => size));
+const { size: sizeProp, color } = defineProps(useSpinnerProps({ size: 60 }));
+const size = $(useSize(() => sizeProp));
 
 const getCircleStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
-	width: sizeString,
-	height: sizeString,
+	width: size.string,
+	height: size.string,
 	backgroundColor: color,
 	borderRadius: '100%',
 	opacity: 0.6,
 	top: 0,
 	left: 0,
 	animationFillMode: 'both',
-	animation: `bounce 2.1s ${version === 1 ? `1s` : `0s`} infinite ease-in-out`,
+	animation: `vue-spinner-bounce 2.1s ${version === 1 ? `1s` : `0s`} infinite ease-in-out`,
 });
 
 const wrapperStyle = $computed(
 	(): CSSProperties => ({
 		position: 'relative',
-		width: sizeString,
-		height: sizeString,
+		width: size.string,
+		height: size.string,
 	})
 );
 </script>
@@ -40,7 +40,7 @@ const wrapperStyle = $computed(
 </template>
 
 <style>
-@keyframes bounce {
+@keyframes vue-spinner-bounce {
 	0%,
 	100% {
 		transform: scale(0);

@@ -6,23 +6,27 @@ export default { name: 'VueSpinnerRise' };
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
-const { color, size, margin } = defineProps(
-	useSpinnerProps({ size: '15px', margin: '2px' })
-);
-const { string: sizeString } = $(useSize(() => size));
+const {
+	color,
+	size: sizeProp,
+	margin: marginProp,
+} = defineProps(useSpinnerProps({ size: '15px', margin: '2px' }));
+
+const size = $(useSize(() => sizeProp));
+const margin = $(useSize(() => marginProp));
 
 const riseAmount = 30;
 
 const getCircleStyle = (version: number) => ({
 	display: 'inline-block',
-	width: sizeString,
-	height: sizeString,
-	margin,
+	width: size.string,
+	height: size.string,
+	margin: margin.string,
 	borderRadius: '100%',
 	backgroundColor: color,
 	animationFillMode: 'both',
 	animation: `${
-		version % 2 === 0 ? 'even' : 'odd'
+		version % 2 === 0 ? 'vue-spinner-even' : 'vue-spinner-odd'
 	} 1s 0s infinite cubic-bezier(0.15, 0.46, 0.9, 0.6)`,
 });
 </script>
@@ -34,7 +38,7 @@ const getCircleStyle = (version: number) => ({
 </template>
 
 <style>
-@keyframes even {
+@keyframes vue-spinner-even {
 	0% {
 		transform: scale(1.1);
 	}
@@ -52,7 +56,7 @@ const getCircleStyle = (version: number) => ({
 	}
 }
 
-@keyframes odd {
+@keyframes vue-spinner-odd {
 	0% {
 		transform: scale(0.4);
 	}

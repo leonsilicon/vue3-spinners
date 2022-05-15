@@ -47,17 +47,17 @@ export default defineComponent({
 
 <style>
 .vue-spinner-mat {
-	animation: v-spin 2s linear infinite;
+	animation: vue-spinner-spin 2s linear infinite;
 	transform-origin: center center;
 }
 
 .vue-spinner-mat .path {
 	stroke-dasharray: 1, 200;
 	stroke-dashoffset: 0;
-	animation: v-mat-dash 1.5s ease-in-out infinite;
+	animation: vue-spinner-mat-dash 1.5s ease-in-out infinite;
 }
 
-@keyframes v-spin {
+@keyframes vue-spinner-spin {
 	0% {
 		transform: rotate3d(0, 0, 1, 0deg);
 	}
@@ -75,7 +75,7 @@ export default defineComponent({
 	}
 }
 
-@keyframes v-mat-dash {
+@keyframes vue-spinner-mat-dash {
 	0% {
 		stroke-dasharray: 1, 200;
 		stroke-dashoffset: 0;
