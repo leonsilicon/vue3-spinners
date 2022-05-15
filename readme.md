@@ -9,7 +9,7 @@ These components were exported from Quasar's spinner components (<https://quasar
 Online demo: <https://leonzalion.github.io/vue3-spinners>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/leonzalion/vue3-spinners/main/assets/spinners.gif" />
+  <img src="https://raw.githubusercontent.com/leonzalion/vue3-spinners/main/packages/assets/spinners.gif" />
 </p>
 
 ## Installation
