@@ -4,6 +4,26 @@ import {
 	VueSpinnerAudio,
 	VueSpinnerBall,
 	VueSpinnerBars,
+	VueSpinnerBar,
+	VueSpinnerBeat,
+	VueSpinnerBounce,
+	VueSpinnerCircle,
+	VueSpinnerClimbingBox,
+	VueSpinnerClip,
+	VueSpinnerDot,
+	VueSpinnerFade,
+	VueSpinnerGridPop,
+	VueSpinnerMoon,
+	VueSpinnerPacman,
+	VueSpinnerPropagate,
+	VueSpinnerPulse,
+	VueSpinnerRing,
+	VueSpinnerRise,
+	VueSpinnerRotate,
+	VueSpinnerScale,
+	VueSpinnerSkew,
+	VueSpinnerSquare,
+	VueSpinnerSync,
 	VueSpinnerBox,
 	VueSpinnerClock,
 	VueSpinnerComment,
@@ -76,6 +96,26 @@ const spinnerColor = $ref('black');
 					:component-props="{ size: spinnerSize, color: spinnerColor }"
 				/>
 			</div>
+			<VueSpinnerBar />
+			<VueSpinnerBeat />
+			<VueSpinnerBounce />
+			<VueSpinnerCircle />
+			<VueSpinnerClimbingBox />
+			<VueSpinnerClip />
+			<VueSpinnerDot />
+			<VueSpinnerFade />
+			<VueSpinnerGridPop />
+			<VueSpinnerMoon />
+			<VueSpinnerPacman />
+			<VueSpinnerPropagate />
+			<VueSpinnerPulse />
+			<VueSpinnerRing />
+			<VueSpinnerRise />
+			<VueSpinnerRotate />
+			<VueSpinnerScale />
+			<VueSpinnerSkew />
+			<VueSpinnerSquare />
+			<VueSpinnerSync />
 		</div>
 	</div>
 </template>
