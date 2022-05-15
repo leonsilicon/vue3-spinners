@@ -30,14 +30,3 @@ export const calculateRgba = (input: string, opacity: number) => {
 
 	return `rgba(${rgbValues}, ${opacity})`;
 };
-
-export const range = (size: number, startAt = 0) =>
-	[...Array.from({ length: size }).keys()].map((i) => i + startAt);
-
-export const characterRange = (startChar: string, endChar: string) =>
-	String.fromCodePoint(
-		...range(
-			endChar.codePointAt(0)! - startChar.codePointAt(0)!,
-			startChar.codePointAt(0)
-		)
-	);

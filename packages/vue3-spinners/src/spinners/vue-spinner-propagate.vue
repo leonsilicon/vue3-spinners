@@ -3,6 +3,7 @@ export default { name: 'VueSpinnerPropagate' };
 </script>
 
 <script setup lang="ts">
+import range from 'just-range';
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
@@ -41,7 +42,7 @@ const wrapperStyle = $computed(
 
 <template>
 	<div :style="wrapperStyle">
-		<div v-for="n in 6" :key="n" :style="getCircleStyle(n)"></div>
+		<div v-for="n in range(0, 6)" :key="n" :style="getCircleStyle(n)"></div>
 	</div>
 </template>
 

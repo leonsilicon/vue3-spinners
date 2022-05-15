@@ -3,11 +3,9 @@ export default { name: 'VueSpinnerFade' };
 </script>
 
 <script setup lang="ts">
-import zip from 'just-zip-it';
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
-import { characterRange, range } from '~/utils/rgba.js';
 import { useSize } from '~/utils/size.js';
 
 const {
@@ -33,8 +31,6 @@ const radius = $(useSize(() => radiusProp));
 
 const rad = 20;
 const quarter = rad / 2 + rad / 5.5;
-
-const rows = zip(characterRange(`a`, `i`).split(``), range(9, 1));
 
 const wrapperStyle: CSSProperties = {
 	top: `${rad}px`,
@@ -103,9 +99,9 @@ const getBarStyle = (variation: string, version: number): CSSProperties => ({
 <template>
 	<div :style="wrapperStyle">
 		<div
-			v-for="(row, i) in rows"
+			v-for="(letter, i) of Object.keys(styles)"
 			:key="i"
-			:style="getBarStyle(row[0], i)"
+			:style="getBarStyle(letter, i)"
 		></div>
 	</div>
 </template>

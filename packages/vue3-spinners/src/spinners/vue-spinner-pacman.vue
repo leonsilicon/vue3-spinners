@@ -3,6 +3,7 @@ export default { name: 'VueSpinnerPacman' };
 </script>
 
 <script setup lang="ts">
+import range from 'just-range';
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
@@ -17,8 +18,9 @@ const {
 const size = $(useSize(() => sizeProp));
 const margin = $(useSize(() => marginProp));
 
-const s1 = (size: string) => `${size} solid transparent`;
-const s2 = (size: string, color: string) => `${size} solid ${color}`;
+const s1 = (sizeString: string) => `${sizeString} solid transparent`;
+const s2 = (sizeString: string, color: string) =>
+	`${sizeString} solid ${color}`;
 
 const getPacmanStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
@@ -61,12 +63,12 @@ const wrapperStyle = $computed(
 	<div :style="wrapperStyle">
 		<div :style="getPacmanStyle(0)"></div>
 		<div :style="getPacmanStyle(1)"></div>
-		<div v-for="n in 4" :key="n" :style="getBallStyle(n + 2)"></div>
+		<div v-for="n of range(2, 7)" :key="n" :style="getBallStyle(n)"></div>
 	</div>
 </template>
 
 <style>
-@keyframes vue-spinner-pacman1 {
+@keyframes vue-spinner-pacman0 {
 	0% {
 		transform: rotate(0deg);
 	}
@@ -75,7 +77,7 @@ const wrapperStyle = $computed(
 	}
 }
 
-@keyframes vue-spinner-pacman2 {
+@keyframes vue-spinner-pacman1 {
 	0% {
 		transform: rotate(0deg);
 	}

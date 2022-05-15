@@ -3,6 +3,8 @@ export default { name: 'VueSpinnerRise' };
 </script>
 
 <script setup lang="ts">
+import range from 'just-range';
+
 import { useSpinnerProps } from '~/utils/props.js';
 import { useSize } from '~/utils/size.js';
 
@@ -33,7 +35,7 @@ const getCircleStyle = (version: number) => ({
 
 <template>
 	<div>
-		<div v-for="n in 5" :key="n" :style="getCircleStyle(n)"></div>
+		<div v-for="n in range(1, 6)" :key="n" :style="getCircleStyle(n)"></div>
 	</div>
 </template>
 
@@ -43,7 +45,7 @@ const getCircleStyle = (version: number) => ({
 		transform: scale(1.1);
 	}
 	25% {
-		transform: translateY(v-bind('riseAmount + "px"'));
+		transform: translateY(v-bind('-riseAmount + "px"'));
 	}
 	50% {
 		transform: scale(0.4);
@@ -61,7 +63,7 @@ const getCircleStyle = (version: number) => ({
 		transform: scale(0.4);
 	}
 	25% {
-		transform: translateY(v-bind('-riseAmount + "px"'));
+		transform: translateY(v-bind('riseAmount + "px"'));
 	}
 	50% {
 		transform: scale(1.1);

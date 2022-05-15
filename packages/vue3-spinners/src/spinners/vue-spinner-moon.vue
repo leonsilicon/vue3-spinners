@@ -18,7 +18,8 @@ const wrapperStyle = $computed(
 		position: 'relative',
 		width: `${size.value + moonSize(size.value) * 2}${size.unit}`,
 		height: `${size.value + moonSize(size.value) * 2}${size.unit}`,
-		animation: 'vue-spinner-moon 0.6s linear 0s infinite normal forwards running',
+		animation:
+			'vue-spinner-moon 0.6s linear 0s infinite normal forwards running',
 		boxSizing: 'content-box',
 	})
 );
@@ -28,11 +29,12 @@ const moonStyle = $computed(
 		position: 'absolute',
 		top: `${size.value / 2 - moonSize(size.value)}${size.unit}`,
 		backgroundColor: color,
-		opacity: 0.8,
-		animation: 'vue-spinner-moon 0.6s linear 0s infinite normal forwards running',
+		opacity: '0.8',
+		animation:
+			'vue-spinner-moon 0.6s linear 0s infinite normal forwards running',
 		boxSizing: 'content-box',
-		width: size.string,
-		height: size.string,
+		width: `${moonSize(size.value)}${size.unit}`,
+		height: `${moonSize(size.value)}${size.unit}`,
 		borderRadius: '100%',
 	})
 );

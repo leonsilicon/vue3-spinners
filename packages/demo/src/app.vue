@@ -105,61 +105,61 @@ const spinnerColor = $ref('black');
 				<VueSpinnerBar :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerBeat">
-				<VueSpinnerBeat :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerBeat :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerBounce">
-				<VueSpinnerBounce :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerBounce :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerCircle">
-				<VueSpinnerCircle :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerCircle :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerClimbingBox">
-				<VueSpinnerClimbingBox :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerClimbingBox :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerClip">
-				<VueSpinnerClip :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerClip :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerDot">
-				<VueSpinnerDot :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerDot :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerFade">
-				<VueSpinnerFade :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerFade :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerGridPop">
-				<VueSpinnerGridPop :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerGridPop :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerMoon">
-				<VueSpinnerMoon :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerMoon :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerPacman">
-				<VueSpinnerPacman :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerPacman :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerPropagate">
-				<VueSpinnerPropagate :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerPropagate :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerPulse">
-				<VueSpinnerPulse :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerPulse :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerRing">
-				<VueSpinnerRing :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerRing :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerRise">
-				<VueSpinnerRise :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerRise :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerRotate">
-				<VueSpinnerRotate :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerRotate :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerScale">
-				<VueSpinnerScale :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerScale :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerSkew">
-				<VueSpinnerSkew :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerSkew :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerSquare">
-				<VueSpinnerSquare :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerSquare :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerSync">
-				<VueSpinnerSync :color="spinnerColor" :size="spinnerSize" />
+				<VueSpinnerSync :color="spinnerColor" />
 			</SpinnerCell>
 		</div>
 	</div>

@@ -3,6 +3,7 @@ export default { name: 'VueSpinnerRotate' };
 </script>
 
 <script setup lang="ts">
+import range from 'just-range';
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
@@ -12,7 +13,7 @@ const {
 	color,
 	size: sizeProp,
 	margin: marginProp,
-} = defineProps(useSpinnerProps({ size: '20px', margin: '2px' }));
+} = defineProps(useSpinnerProps({ size: '15px', margin: '2px' }));
 
 const size = $(useSize(() => sizeProp));
 const margin = $(useSize(() => marginProp));
@@ -41,13 +42,13 @@ const getCircleStyle = (side: number): CSSProperties => ({
 	margin: margin.string,
 	borderRadius: '100%',
 	backgroundColor: color,
-	left: `${side ? -28 : 25}px`,
+	left: `${side === 1 ? -28 : 25}px`,
 });
 </script>
 
 <template>
 	<div :style="wrapperStyle">
-		<div v-for="n in 2" :key="n" :style="getCircleStyle(n)"></div>
+		<div v-for="n in range(0, 2)" :key="n" :style="getCircleStyle(n)"></div>
 	</div>
 </template>
 

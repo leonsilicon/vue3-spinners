@@ -8,7 +8,7 @@ const { component } = defineProps<{
 </script>
 
 <template>
-	<div class="column items-center gap-2">
+	<div class="column items-center gap-2 border-1 rounded-md p-5">
 		<div>{{ component.name }}</div>
 		<component :is="component" v-bind="componentProps"></component>
 	</div>
