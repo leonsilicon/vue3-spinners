@@ -1,13 +1,59 @@
 <script setup lang="ts">
-import * as Spinners from 'vue3-spinners';
+import {
+	VueSpinner,
+	VueSpinnerAudio,
+	VueSpinnerBall,
+	VueSpinnerBars,
+	VueSpinnerBox,
+	VueSpinnerClock,
+	VueSpinnerComment,
+	VueSpinnerCore,
+	VueSpinnerDots,
+	VueSpinnerFacebook,
+	VueSpinnerGears,
+	VueSpinnerGrid,
+	VueSpinnerHearts,
+	VueSpinnerHourglass,
+	VueSpinnerInfinity,
+	VueSpinnerIos,
+	VueSpinnerOrbit,
+	VueSpinnerOval,
+	VueSpinnerPie,
+	VueSpinnerPuff,
+	VueSpinnerRadio,
+	VueSpinnerRings,
+	VueSpinnerTail,
+} from 'vue3-spinners';
+import SpinnerCell from './components/spinner-cell.vue';
 
-const spinnerComponents = [...Object.values(Spinners)];
+const quasarSpinners = [
+	VueSpinner,
+	VueSpinnerAudio,
+	VueSpinnerBall,
+	VueSpinnerBars,
+	VueSpinnerBox,
+	VueSpinnerClock,
+	VueSpinnerComment,
+	VueSpinnerCore,
+	VueSpinnerDots,
+	VueSpinnerFacebook,
+	VueSpinnerGears,
+	VueSpinnerGrid,
+	VueSpinnerHearts,
+	VueSpinnerHourglass,
+	VueSpinnerInfinity,
+	VueSpinnerIos,
+	VueSpinnerOrbit,
+	VueSpinnerOval,
+	VueSpinnerPie,
+	VueSpinnerPuff,
+	VueSpinnerRadio,
+	VueSpinnerRings,
+	VueSpinnerTail,
+];
 
 const spinnerSize = $ref(40);
 const spinnerColor = $ref('black');
-const spinnerStyle = $computed(() => ({
-	color: spinnerColor,
-}));
 </script>
 
 <template>
@@ -24,19 +70,12 @@ const spinnerStyle = $computed(() => ({
 			/>
 		</div>
 		<div class="grid grid-cols-4 gap-5 mt-4">
-			<template
-				v-for="spinnerComponent of spinnerComponents"
-				:key="spinnerComponent.name"
-			>
-				<div class="column items-center gap-2">
-					<div>{{ spinnerComponent.name }}</div>
-					<component
-						:is="spinnerComponent"
-						:size="spinnerSize"
-						:style="spinnerStyle"
-					/>
-				</div>
-			</template>
+			<div v-for="quasarSpinnerComponent of quasarSpinners">
+				<SpinnerCell
+					:component="quasarSpinnerComponent"
+					:component-props="{ size: spinnerSize, color: spinnerColor }"
+				/>
+			</div>
 		</div>
 	</div>
 </template>

@@ -59,7 +59,7 @@ const svg = [
 					{
 						x: '15',
 						y: '55',
-						width: '7 0',
+						width: '70',
 						height: '25',
 					},
 					[
