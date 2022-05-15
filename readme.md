@@ -86,7 +86,7 @@ app.use(VueSpinnersPlugin);
 ### color
 
 Type: `string`\
-Default: `#000000`
+Default: `#000000`\
 Supported Spinners: _all_
 
 All spinners accept a color property that sets the color of the spinner.
@@ -94,7 +94,7 @@ All spinners accept a color property that sets the color of the spinner.
 ### size
 
 Type: `string | number`\
-Default: _varies by spinner_
+Default: _varies by spinner_\
 Supported Spinners:
 
 - VueSpinner
