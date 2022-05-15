@@ -81,7 +81,7 @@ app.use(VueSpinnersPlugin);
 // ...
 ```
 
-## Props
+## Universal Props (accepted by each spinner)
 
 ### color
 
@@ -91,49 +91,52 @@ Supported Spinners: _all_
 
 All spinners accept a color property that sets the color of the spinner.
 
+## Spinner-dependent Props
+
+Each spinner takes different properties whose effect depends on the spinner being used; please refer to the file for each spinner to find out which properties it accepts (which is indicated by the destructuring of the `defineProps` function): <https://github.com/leonzalion/vue3-spinners/tree/main/packages/vue3-spinners/src/spinners>
+
+Example:
+
+```typescript
+// vue-spinner-scale.vue
+const {
+  color,
+  height: heightProp,
+  width: widthProp,
+  radius: radiusProp,
+  margin: marginProp,
+} = defineProps();
+// ...
+```
+
+This `defineProps` destructuring indicates that `<VueSpinnerScale>` accepts the following props: `color`, `height`, `width`, `radius`, `margin`
+
 ### size
 
-Type: `string | number`\
-Default: _varies by spinner_\
-Supported Spinners:
+Type: [`CSS <length>`](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
 
-- VueSpinner
-- VueSpinnerAudio
-- VueSpinnerBall
-- VueSpinnerBars
-- VueSpinnerBeat
-- VueSpinnerBounce
-- VueSpinnerBox
-- VueSpinnerCircle
-- VueSpinnerClimbingBox
-- VueSpinnerClip
-- VueSpinnerClock
-- VueSpinnerComment
-- VueSpinnerCore
-- VueSpinnerDot
-- VueSpinnerDots
-- VueSpinnerFacebook
-- VueSpinnerGears
-- VueSpinnerGrid
-- VueSpinnerGridPop
-- VueSpinnerHearts
-- VueSpinnerHourglass
-- VueSpinnerInfinity
-- VueSpinnerIos
-- VueSpinnerMoon
-- VueSpinnerOrbit
-- VueSpinnerOval
-- VueSpinnerPacman
-- VueSpinnerPie
-- VueSpinnerPropagate
-- VueSpinnerPuff
-- VueSpinnerPulse
-- VueSpinnerRadio
-- VueSpinnerRing
-- VueSpinnerRings
-- VueSpinnerRise
-- VueSpinnerRotate
-- VueSpinnerSkew
-- VueSpinnerSquare
-- VueSpinnerSync
-- VueSpinnerTail
+The size of the spinner.
+
+### height
+
+Type: [`CSS <length>`](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
+
+The height of the spinner.
+
+### width
+
+Type: [`CSS <length>`](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
+
+The width of the spinner.
+
+### radius
+
+Type: [`CSS <length>`](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
+
+The radius of the spinner.
+
+### margin
+
+Type: [`CSS <length>`](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
+
+The margin of the spinner.
