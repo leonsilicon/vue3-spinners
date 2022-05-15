@@ -1,13 +1,12 @@
 <script setup lang="ts">
-const { component, componentProps } = defineProps<{
-	component: any;
-	componentProps: Record<string, unknown>;
+const { name } = defineProps<{
+	name: string;
 }>();
 </script>
 
 <template>
 	<div class="column items-center gap-2">
-		<div>{{ component.name }}</div>
-		<component :is="component" v-bind="componentProps"></component>
+		<div>{{ name }}</div>
+		<slot></slot>
 	</div>
 </template>
