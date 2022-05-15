@@ -1,7 +1,7 @@
 {
 	"name": "vue3-spinners",
 	"type": "module",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "Spinners for Vue 3.",
 	"keywords": [
 		"vue-spinners",
