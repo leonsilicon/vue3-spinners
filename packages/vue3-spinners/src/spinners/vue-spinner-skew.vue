@@ -12,7 +12,7 @@ const { color, size } = defineProps(useSpinnerProps({ size: '20px'}));
 	<div class="square"></div>
 </template>
 
-<style scoped>
+<style>
 @keyframes skew {
 	25% {
 		transform: perspective(100px) rotateX(180deg) rotateY(0);

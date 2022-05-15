@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { Component } from 'vue';
+
 const { component } = defineProps<{
-	component: any;
+	component: Component;
 	componentProps: Record<string, unknown>;
 }>();
 </script>

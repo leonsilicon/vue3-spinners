@@ -6,14 +6,14 @@ export default { name: 'VueSpinnerDot' };
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
-import { useSizeProp } from '~/utils/size.js';
+import { useSize } from '~/utils/size.js';
 
 const { color, size } = defineProps(useSpinnerProps({ size: 60 }));
 const {
 	string: sizeString,
 	value: sizeValue,
 	unit: sizeUnit,
-} = $(useSizeProp(() => size));
+} = $(useSize(() => size));
 
 const getCircleStyle = (version: number): CSSProperties => ({
 	position: 'absolute',

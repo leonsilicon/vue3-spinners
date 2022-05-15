@@ -6,10 +6,10 @@ export default { name: 'VueSpinnerCircle' };
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
-import { useSizeProp } from '~/utils/size.js';
+import { useSize } from '~/utils/size.js';
 
 const { size, color } = defineProps(useSpinnerProps({ size: 50 }));
-const { unit, value, string: sizeString } = $(useSizeProp(() => size));
+const { unit, value, string: sizeString } = $(useSize(() => size));
 
 const getRingStyle = (version: number): CSSProperties => ({
 	position: 'absolute',

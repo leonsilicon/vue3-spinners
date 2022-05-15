@@ -6,14 +6,14 @@ export default { name: 'VueSpinnerMoon' };
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
-import { useSizeProp } from '~/utils/size.js';
+import { useSize } from '~/utils/size.js';
 
 const { color, size: sizeProp } = defineProps(useSpinnerProps({ size: 60 }));
 const {
 	value: sizeValue,
 	unit: sizeUnit,
 	string: sizeString,
-} = $(useSizeProp(() => sizeProp));
+} = $(useSize(() => sizeProp));
 
 const moonSize = (size: number) => size / 7;
 

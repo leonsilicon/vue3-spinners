@@ -4,7 +4,7 @@ export default { name: 'VueSpinnerGridPop' };
 
 <script setup lang="ts">
 import { useSpinnerProps } from '~/utils/props.js';
-import { useSizeProp } from '~/utils/size.js';
+import { useSize } from '~/utils/size.js';
 
 const random = (top: number) => Math.random() * top;
 
@@ -12,7 +12,7 @@ const { color, size, margin } = defineProps(
 	useSpinnerProps({ size: 15, margin: '2px' })
 );
 
-const { string: sizeString } = $(useSizeProp(() => size));
+const { string: sizeString } = $(useSize(() => size));
 
 const wrapperWidth = $computed(
 	() => Number.parseFloat(String(size)) * 3 + Number.parseFloat(margin) * 6

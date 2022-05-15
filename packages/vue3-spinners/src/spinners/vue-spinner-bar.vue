@@ -7,16 +7,20 @@ import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
 import { calculateRgba } from '~/utils/rgba.js';
+import { useSize } from '~/utils/size.js';
 
 const { color, width, height } = defineProps(
 	useSpinnerProps({ height: 4, width: 100 })
 );
 
+const { string: widthString } = $(useSize(() => width));
+const { string: heightString } = $(useSize(() => height));
+
 const wrapperStyle = $computed(
 	(): CSSProperties => ({
 		position: 'relative',
-		width,
-		height,
+		width: widthString,
+		height: heightString,
 		overflow: 'hidden',
 		backgroundColor: calculateRgba(color, 0.2),
 		backgroundClip: 'padding-box',
@@ -25,7 +29,7 @@ const wrapperStyle = $computed(
 
 const getBarStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
-	height,
+	height: heightString,
 	overflow: 'hidden',
 	backgroundColor: color,
 	backgroundClip: 'padding-box',

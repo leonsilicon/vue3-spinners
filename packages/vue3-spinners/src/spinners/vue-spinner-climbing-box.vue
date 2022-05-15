@@ -6,11 +6,11 @@ export default { name: 'VueSpinnerClimbingBox' };
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
-import { useSizeProp } from '~/utils/size.js';
+import { useSize } from '~/utils/size.js';
 
 const { color, size } = defineProps(useSpinnerProps({ size: 15 }));
 
-const { string: sizeString } = $(useSizeProp(() => size));
+const { string: sizeString } = $(useSize(() => size));
 
 const containerStyle = $computed(
 	(): CSSProperties => ({

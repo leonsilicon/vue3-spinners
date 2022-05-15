@@ -6,7 +6,7 @@ export default { name: 'VueSpinnerPacman' };
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
-import { useSizeProp } from '~/utils/size.js';
+import { useSize } from '~/utils/size.js';
 
 const {
 	size: sizeProp,
@@ -18,7 +18,7 @@ const {
 	value: sizeValue,
 	unit: sizeUnit,
 	string: sizeString,
-} = $(useSizeProp(() => sizeProp));
+} = $(useSize(() => sizeProp));
 
 const s1 = (size: string) => `${size} solid transparent`;
 const s2 = (size: string, color: string) => `${size} solid ${color}`;

@@ -4,11 +4,11 @@ export default { name: 'VueSpinnerSquare' };
 
 <script setup lang="ts">
 import { useSpinnerProps } from '~/utils/props.js';
-import { useSizeProp } from '~/utils/size.js';
+import { useSize } from '~/utils/size.js';
 
 const { color, size } = defineProps(useSpinnerProps({ size: '50px' }));
 
-const { string: sizeString } = $(useSizeProp(() => size));
+const { string: sizeString } = $(useSize(() => size));
 
 const squareStyle = $computed(() => ({
 	display: 'inline-block',
@@ -24,7 +24,7 @@ const squareStyle = $computed(() => ({
 	<div :style="squareStyle"></div>
 </template>
 
-<style scoped>
+<style>
 @keyframes square {
 	25% {
 		transform: rotateX(180deg) rotateY(0);

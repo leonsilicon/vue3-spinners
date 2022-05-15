@@ -3,49 +3,50 @@ import {
 	VueSpinner,
 	VueSpinnerAudio,
 	VueSpinnerBall,
-	VueSpinnerBars,
 	VueSpinnerBar,
+	VueSpinnerBars,
 	VueSpinnerBeat,
 	VueSpinnerBounce,
+	VueSpinnerBox,
 	VueSpinnerCircle,
 	VueSpinnerClimbingBox,
 	VueSpinnerClip,
+	VueSpinnerClock,
+	VueSpinnerComment,
+	VueSpinnerCore,
 	VueSpinnerDot,
+	VueSpinnerDots,
+	VueSpinnerFacebook,
 	VueSpinnerFade,
+	VueSpinnerGears,
+	VueSpinnerGrid,
 	VueSpinnerGridPop,
+	VueSpinnerHearts,
+	VueSpinnerHourglass,
+	VueSpinnerInfinity,
+	VueSpinnerIos,
 	VueSpinnerMoon,
+	VueSpinnerOrbit,
+	VueSpinnerOval,
 	VueSpinnerPacman,
+	VueSpinnerPie,
 	VueSpinnerPropagate,
+	VueSpinnerPuff,
 	VueSpinnerPulse,
+	VueSpinnerRadio,
 	VueSpinnerRing,
+	VueSpinnerRings,
 	VueSpinnerRise,
 	VueSpinnerRotate,
 	VueSpinnerScale,
 	VueSpinnerSkew,
 	VueSpinnerSquare,
 	VueSpinnerSync,
-	VueSpinnerBox,
-	VueSpinnerClock,
-	VueSpinnerComment,
-	VueSpinnerCore,
-	VueSpinnerDots,
-	VueSpinnerFacebook,
-	VueSpinnerGears,
-	VueSpinnerGrid,
-	VueSpinnerHearts,
-	VueSpinnerHourglass,
-	VueSpinnerInfinity,
-	VueSpinnerIos,
-	VueSpinnerOrbit,
-	VueSpinnerOval,
-	VueSpinnerPie,
-	VueSpinnerPuff,
-	VueSpinnerRadio,
-	VueSpinnerRings,
 	VueSpinnerTail,
 } from 'vue3-spinners';
-import SpinnerCellComponent from './components/spinner-cell-component.vue';
+
 import SpinnerCell from './components/spinner-cell.vue';
+import SpinnerCellComponent from './components/spinner-cell-component.vue';
 
 const quasarSpinners = [
 	VueSpinner,
@@ -91,18 +92,17 @@ const spinnerColor = $ref('black');
 			/>
 		</div>
 		<div class="grid grid-cols-4 gap-5 mt-4">
-			<div v-for="quasarSpinnerComponent of quasarSpinners">
+			<template
+				v-for="quasarSpinnerComponent of quasarSpinners"
+				:key="quasarSpinnerComponent.name"
+			>
 				<SpinnerCellComponent
 					:component="quasarSpinnerComponent"
 					:component-props="{ size: spinnerSize, color: spinnerColor }"
 				/>
-			</div>
+			</template>
 			<SpinnerCell name="VueSpinnerBar">
-				<VueSpinnerBar
-					:width="spinnerSize"
-					:color="spinnerColor"
-					:height="spinnerSize"
-				/>
+				<VueSpinnerBar :color="spinnerColor" />
 			</SpinnerCell>
 			<SpinnerCell name="VueSpinnerBeat">
 				<VueSpinnerBeat :color="spinnerColor" :size="spinnerSize" />

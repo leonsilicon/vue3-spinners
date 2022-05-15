@@ -6,7 +6,7 @@ export default { name: 'VueSpinnerPropagate' };
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
-import { useSizeProp } from '~/utils/size.js';
+import { useSize } from '~/utils/size.js';
 
 const { color, size } = defineProps(
 	useSpinnerProps({
@@ -18,7 +18,7 @@ const {
 	string: sizeString,
 	unit: sizeUnit,
 	value: sizeValue,
-} = $(useSizeProp(() => size));
+} = $(useSize(() => size));
 
 // 1.5 4.5 7.5
 const distance = [1, 3, 5];

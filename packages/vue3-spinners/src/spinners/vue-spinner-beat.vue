@@ -2,13 +2,13 @@
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
-import { useSizeProp } from '~/utils/size.js';
+import { useSize } from '~/utils/size.js';
 
 const { color, size, margin } = defineProps(
 	useSpinnerProps({ size: 15, margin: '2px' })
 );
 
-const { string: sizeString } = $(useSizeProp(() => size));
+const { string: sizeString } = $(useSize(() => size));
 
 const getCircleStyle = (version: number): CSSProperties => ({
 	animation: `beat 0.7s ${version % 2 ? `0s` : `0.35s`} infinite linear`,
@@ -28,7 +28,7 @@ const getCircleStyle = (version: number): CSSProperties => ({
 	</div>
 </template>
 
-<style scoped>
+<style>
 @keyframes beat {
 	50% {
 		transform: scale(0.75);

@@ -8,11 +8,11 @@ export default { name: 'VueSpinnerClip' };
 
 <script setup lang="ts">
 import { useSpinnerProps } from '~/utils/props.js';
-import { useSizeProp } from '~/utils/size.js';
+import { useSize } from '~/utils/size.js';
 
 const { color, size } = defineProps(useSpinnerProps({ size: 35 }));
 
-const { string: sizeString } = $(useSizeProp(() => size));
+const { string: sizeString } = $(useSize(() => size));
 
 const ringStyle = $computed(() => ({
 	background: 'transparent !important',

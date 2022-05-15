@@ -6,14 +6,14 @@ export default { name: 'VueSpinnerRing' };
 import type { CSSProperties } from 'vue';
 
 import { useSpinnerProps } from '~/utils/props.js';
-import { useSizeProp } from '~/utils/size.js';
+import { useSize } from '~/utils/size.js';
 
 const { color, size } = defineProps(useSpinnerProps({ size: '60px' }));
 const {
 	string: sizeString,
 	value: sizeValue,
 	unit: sizeUnit,
-} = $(useSizeProp(() => size));
+} = $(useSize(() => size));
 
 const getRingStyle = (version: number): CSSProperties => ({
 	position: 'absolute',
@@ -44,7 +44,7 @@ const wrapperStyle = $computed(
 	</div>
 </template>
 
-<style scoped>
+<style>
 @keyframes right {
 	0% {
 		transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
