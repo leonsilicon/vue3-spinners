@@ -32,7 +32,7 @@ jobs:
           version: latest
 
       - name: Install dependencies and build frontend
-        run: pnpm install && pnpm build:demo
+        run: pnpm install && pnpm build && pnpm build:demo
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.3
