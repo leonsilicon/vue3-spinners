@@ -7,7 +7,7 @@
 			"~/*": ["./src/*"]
 		},
 		"jsx": "preserve",
-		"types": ["vue/ref-macros"]
+		"types": ["vue/ref-macros", "./typings"]
 	},
 	"include": ["./src", "./typings"]
 }

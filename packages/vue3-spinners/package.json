@@ -47,16 +47,18 @@
 	"dependencies": {
 		"just-range": "^4.0.1",
 		"just-zip-it": "^3.0.2",
-		"parse-unit": "^1.0.1"
+		"outdent": "^0.8.0",
+		"parse-unit": "^1.0.1",
+		"style-inject": "^0.3.0"
 	},
 	"devDependencies": {
 		"@types/parse-unit": "^1.0.1",
 		"@vue/runtime-core": "^3.2.33",
-		"compile-vue-sfc": "^0.1.5",
+		"compile-vue-sfc": "^0.1.6",
 		"desm": "^1.2.0",
 		"execa": "^6.1.0",
 		"globby": "^13.1.1",
-		"lion-system": "^1.3.30",
+		"lion-system": "^1.3.32",
 		"typescript": "^4.6.4",
 		"vitest": "^0.12.4",
 		"vue": "^3.2.33"

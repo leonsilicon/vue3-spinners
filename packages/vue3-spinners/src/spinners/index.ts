@@ -1,4 +1,4 @@
-export { default as VueSpinner } from './vue-spinner.js';
+export { default as VueSpinner } from './vue-spinner.vue.js';
 export { default as VueSpinnerAudio } from './vue-spinner-audio.js';
 export { default as VueSpinnerBall } from './vue-spinner-ball.js';
 export { default as VueSpinnerBar } from './vue-spinner-bar.vue.js';
