@@ -28,23 +28,23 @@ declare module '@vue/runtime-core' {
 		VueSpinnerHourglass: DefineComponent<typeof spinnerProps>;
 		VueSpinnerInfinity: DefineComponent<typeof spinnerProps>;
 		VueSpinnerIos: DefineComponent<typeof spinnerProps>;
-		VueSpinnerMoon: typeof import('./spinners/vue-spinner-grid-moon.vue.js');
+		VueSpinnerMoon: typeof import('./spinners/vue-spinner-moon.vue.js');
 		VueSpinnerOrbit: DefineComponent<typeof spinnerProps>;
 		VueSpinnerOval: DefineComponent<typeof spinnerProps>;
-		VueSpinnerPacman: typeof import('./spinners/vue-spinner-grid-pacman.vue.js');
+		VueSpinnerPacman: typeof import('./spinners/vue-spinner-pacman.vue.js');
 		VueSpinnerPie: DefineComponent<typeof spinnerProps>;
-		VueSpinnerPropagate: typeof import('./spinners/vue-spinner-grid-propagate.vue.js');
+		VueSpinnerPropagate: typeof import('./spinners/vue-spinner-propagate.vue.js');
 		VueSpinnerPuff: DefineComponent<typeof spinnerProps>;
-		VueSpinnerPulse: typeof import('./spinners/vue-spinner-grid-pulse.vue.js');
+		VueSpinnerPulse: typeof import('./spinners/vue-spinner-pulse.vue.js');
 		VueSpinnerRadio: DefineComponent<typeof spinnerProps>;
-		VueSpinnerRing: typeof import('./spinners/vue-spinner-grid-ring.vue.js');
+		VueSpinnerRing: typeof import('./spinners/vue-spinner-ring.vue.js');
 		VueSpinnerRings: DefineComponent<typeof spinnerProps>;
-		VueSpinnerRise: typeof import('./spinners/vue-spinner-grid-rise.vue.js');
-		VueSpinnerRotate: typeof import('./spinners/vue-spinner-grid-rotate.vue.js');
-		VueSpinnerScale: typeof import('./spinners/vue-spinner-grid-scale.vue.js');
-		VueSpinnerSkew: typeof import('./spinners/vue-spinner-grid-skew.vue.js');
-		VueSpinnerSquare: typeof import('./spinners/vue-spinner-grid-square.vue.js');
-		VueSpinnerSync: typeof import('./spinners/vue-spinner-grid-sync.vue.js');
+		VueSpinnerRise: typeof import('./spinners/vue-spinner-rise.vue.js');
+		VueSpinnerRotate: typeof import('./spinners/vue-spinner-rotate.vue.js');
+		VueSpinnerScale: typeof import('./spinners/vue-spinner-scale.vue.js');
+		VueSpinnerSkew: typeof import('./spinners/vue-spinner-skew.vue.js');
+		VueSpinnerSquare: typeof import('./spinners/vue-spinner-square.vue.js');
+		VueSpinnerSync: typeof import('./spinners/vue-spinner-sync.vue.js');
 		VueSpinnerTail: DefineComponent<typeof spinnerProps>;
 	}
 }
