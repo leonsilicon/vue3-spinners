@@ -42,8 +42,10 @@ importers:
 
   packages/vue3-spinners:
     specifiers:
+      '@types/colornames': ^1.1.2
       '@types/parse-unit': ^1.0.1
       '@vue/runtime-core': ^3.2.33
+      colornames: ^1.1.1
       compile-vue-sfc: ^0.2.0
       desm: ^1.2.0
       execa: ^6.1.0
@@ -58,12 +60,14 @@ importers:
       vitest: ^0.12.4
       vue: ^3.2.33
     dependencies:
+      colornames: 1.1.1
       just-range: 4.0.1
       just-zip-it: 3.0.2
       outdent: 0.8.0
       parse-unit: 1.0.1
       style-inject: 0.3.0
     devDependencies:
+      '@types/colornames': 1.1.2
       '@types/parse-unit': 1.0.1
       '@vue/runtime-core': 3.2.33
       compile-vue-sfc: 0.2.0_ytvqwwdyss532bvoq2clv4ed5m
@@ -627,6 +631,10 @@ packages:
 
   /@types/chai/4.3.1:
     resolution: {integrity: sha512-/zPMqDkzSZ8t3VtxOa4KPq7uzzW978M9Tvh+j7GHKuo6k6GTLxPJ4J5gE5cjfJ26pnXst0N5Hax8Sr0T2Mi9zQ==}
+    dev: true
+
+  /@types/colornames/1.1.2:
+    resolution: {integrity: sha512-tq8AZME3IzZDtW/xpgk6EjqMCtIy5c8/YthsRDSkfj10O8y7QNpD5A22GQf5ziB4OaX7u1jtWu5werbjAKFleQ==}
     dev: true
 
   /@types/cssnano/5.1.0_postcss@8.4.13:
@@ -1539,6 +1547,10 @@ packages:
   /colorette/2.0.16:
     resolution: {integrity: sha512-hUewv7oMjCp+wkBv5Rm0v87eJhq4woh5rSR+42YSQJKecCqgIqNkZ6lAlQms/BwHPJA5NKMRlpxPRv0n8HQW6g==}
     dev: true
+
+  /colornames/1.1.1:
+    resolution: {integrity: sha1-+IiQMGhcfE/54qVZ9Qd+t2qBb5Y=}
+    dev: false
 
   /commander/7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}

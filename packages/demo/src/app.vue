@@ -96,7 +96,11 @@ const spinnerColor = $ref('black');
 					:component-props="{ size: spinnerSize, color: spinnerColor }"
 				/>
 			</div>
-			<VueSpinnerBar />
+			<VueSpinnerBar
+				:width="spinnerSize"
+				:color="spinnerColor"
+				:height="spinnerSize"
+			/>
 			<VueSpinnerBeat />
 			<VueSpinnerBounce />
 			<VueSpinnerCircle />

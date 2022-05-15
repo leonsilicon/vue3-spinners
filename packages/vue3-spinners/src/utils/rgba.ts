@@ -1,8 +1,15 @@
+import toHex from 'colornames';
+
 export const calculateRgba = (input: string, opacity: number) => {
 	let color = '';
 
 	if (input.startsWith(`#`)) {
 		color = input.slice(1);
+	}
+
+	const colorNameHex = toHex(color);
+	if (colorNameHex !== undefined) {
+		color = colorNameHex;
 	}
 
 	if (color.length === 3) {
@@ -15,10 +22,12 @@ export const calculateRgba = (input: string, opacity: number) => {
 		color = res;
 	}
 
-	const rgbValues = color
-		.match(/.{2}/g)!
-		.map((hex) => Number.parseInt(hex, 16))
-		.join(`, `);
+	const rgbParts = color.match(/.{2}/g);
+	if (rgbParts === null) {
+		throw new Error(`Could not identify RGB value of color ${color}`);
+	}
+
+	const rgbValues = rgbParts.map((hex) => Number.parseInt(hex, 16)).join(`, `);
 
 	return `rgba(${rgbValues}, ${opacity})`;
 };

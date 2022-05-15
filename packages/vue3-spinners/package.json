@@ -45,6 +45,7 @@
 		"vue": "^3"
 	},
 	"dependencies": {
+		"colornames": "^1.1.1",
 		"just-range": "^4.0.1",
 		"just-zip-it": "^3.0.2",
 		"outdent": "^0.8.0",
@@ -52,6 +53,7 @@
 		"style-inject": "^0.3.0"
 	},
 	"devDependencies": {
+		"@types/colornames": "^1.1.2",
 		"@types/parse-unit": "^1.0.1",
 		"@vue/runtime-core": "^3.2.33",
 		"compile-vue-sfc": "^0.2.0",
