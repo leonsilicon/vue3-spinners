@@ -3,13 +3,14 @@ import toHex from 'colornames';
 export const calculateRgba = (input: string, opacity: number) => {
 	let color = '';
 
-	if (input.startsWith(`#`)) {
+	if (color.startsWith(`#`)) {
 		color = input.slice(1);
 	}
 
 	const colorNameHex = toHex(color);
 	if (colorNameHex !== undefined) {
-		color = colorNameHex;
+		// Remove the leading '#'
+		color = colorNameHex.slice(1);
 	}
 
 	if (color.length === 3) {
