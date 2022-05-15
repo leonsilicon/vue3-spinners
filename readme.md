@@ -4,9 +4,11 @@
 
 Spinner components for Vue 3.
 
-These components were exported from Quasar's spinner components (<https://quasar.dev/vue-components/spinners>), so thanks to the Quasar team for making such an amazing UI library!
+These components were exported from Quasar's spinner components (<https://quasar.dev/vue-components/spinners>) and from [vue-spinners](https://github.com/Saeris/vue-spinners) (which itself was a port of [react-spinners](https://github.com/davidhu2000/react-spinners)) so the authors of these libraries deserve all of the credit for these amazing spinner animations!
 
-Online demo: <https://leonzalion.github.io/vue3-spinners>
+## Online Demo
+
+To see all the spinners in action, press the following link: <https://leonzalion.github.io/vue3-spinners>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/leonzalion/vue3-spinners/main/packages/assets/images/spinners.gif" />
@@ -34,83 +36,20 @@ Then, import the spinners in your Vue component:
 <script>
 import {
   VueSpinner,
-  VueSpinnerAudio,
-  VueSpinnerBall,
-  VueSpinnerBars,
-  VueSpinnerBox,
-  VueSpinnerClock,
-  VueSpinnerComment,
-  VueSpinnerCore,
-  VueSpinnerDots,
-  VueSpinnerFacebook,
-  VueSpinnerGears,
-  VueSpinnerGrid,
-  VueSpinnerHearts,
-  VueSpinnerHourglass,
-  VueSpinnerInfinity,
-  VueSpinnerIos,
-  VueSpinnerOrbit,
-  VueSpinnerOval,
-  VueSpinnerPie,
-  VueSpinnerPuff,
-  VueSpinnerRadio,
-  VueSpinnerRings,
-  VueSpinnerTail,
+  // ...
 } from 'vue3-spinners';
 
 export default {
   components: {
     VueSpinner,
-    VueSpinnerAudio,
-    VueSpinnerBall,
-    VueSpinnerBars,
-    VueSpinnerBox,
-    VueSpinnerClock,
-    VueSpinnerComment,
-    VueSpinnerCore,
-    VueSpinnerDots,
-    VueSpinnerFacebook,
-    VueSpinnerGears,
-    VueSpinnerGrid,
-    VueSpinnerHearts,
-    VueSpinnerHourglass,
-    VueSpinnerInfinity,
-    VueSpinnerIos,
-    VueSpinnerOrbit,
-    VueSpinnerOval,
-    VueSpinnerPie,
-    VueSpinnerPuff,
-    VueSpinnerRadio,
-    VueSpinnerRings,
-    VueSpinnerTail,
+    // ...
   },
 };
 </script>
 
 <template>
-  <VueSpinner size='20' color='red' />
-  <VueSpinnerAudio >
-  <VueSpinnerBall />
-  <VueSpinnerBars />
-  <VueSpinnerBox />
-  <VueSpinnerClock />
-  <VueSpinnerComment />
-  <VueSpinnerCore />
-  <VueSpinnerDots />
-  <VueSpinnerFacebook />
-  <VueSpinnerGears />
-  <VueSpinnerGrid />
-  <VueSpinnerHearts />
-  <VueSpinnerHourglass />
-  <VueSpinnerInfinity />
-  <VueSpinnerIos />
-  <VueSpinnerOrbit />
-  <VueSpinnerOval />
-  <VueSpinnerPie />
-  <VueSpinnerPuff />
-  <VueSpinnerRadio />
-  <VueSpinnerRings />
-  <VueSpinnerTail />
+  <VueSpinner size="20" color="red" />
+  <!-- ... -->
 </template>
 ```
 
@@ -130,7 +69,7 @@ import {
 </template>
 ```
 
-If you want the spinners to be available globally without needing to import them, add the following to your app's entrypoint:
+If you want the spinners to be available globally without needing to import them manually, add the following to your app's entrypoint:
 
 ```typescript
 import { createApp } from 'vue';
@@ -144,22 +83,57 @@ app.use(VueSpinnersPlugin);
 
 ## Props
 
-### size
-
-Type: `string | number`
-\
-Default: `1em`
-
-The size of the spinner.
-
 ### color
 
-Type: `string`
-\
-Default: `currentColor`
+Type: `string`\
+Default: `#000000`
+Supported Spinners: _all_
 
-The color of the spinner.
+All spinners accept a color property that sets the color of the spinner.
 
-## Why not use Quasar directly?
+### size
 
-Unfortunately, there are a few Quasar styles that conflict with those of TailwindCSS (e.g. `bg-white` and `bg-black`) that the Quasar team is [not planning on changing](https://github.com/quasarframework/quasar/issues/6775#issuecomment-865974606). Many of Quasar's components depend on these styles, so it's not possible to simply omit Quasar's CSS. Thus, I couldn't use Quasar for my project which heavily depends on WindiCSS, a superset of TailwindCSS. But, Quasar's UI components are some of the best out there, especially the spinners, so the best solution I could think of is exporting these spinners into a package independent of Quasar's CSS.
+Type: `string | number`\
+Default: _varies by spinner_
+Supported Spinners:
+
+- VueSpinner
+- VueSpinnerAudio
+- VueSpinnerBall
+- VueSpinnerBars
+- VueSpinnerBeat
+- VueSpinnerBounce
+- VueSpinnerBox
+- VueSpinnerCircle
+- VueSpinnerClimbingBox
+- VueSpinnerClip
+- VueSpinnerClock
+- VueSpinnerComment
+- VueSpinnerCore
+- VueSpinnerDot
+- VueSpinnerDots
+- VueSpinnerFacebook
+- VueSpinnerGears
+- VueSpinnerGrid
+- VueSpinnerGridPop
+- VueSpinnerHearts
+- VueSpinnerHourglass
+- VueSpinnerInfinity
+- VueSpinnerIos
+- VueSpinnerMoon
+- VueSpinnerOrbit
+- VueSpinnerOval
+- VueSpinnerPacman
+- VueSpinnerPie
+- VueSpinnerPropagate
+- VueSpinnerPuff
+- VueSpinnerPulse
+- VueSpinnerRadio
+- VueSpinnerRing
+- VueSpinnerRings
+- VueSpinnerRise
+- VueSpinnerRotate
+- VueSpinnerSkew
+- VueSpinnerSquare
+- VueSpinnerSync
+- VueSpinnerTail
