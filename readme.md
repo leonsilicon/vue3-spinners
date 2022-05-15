@@ -22,15 +22,7 @@ npm install vue3-spinners
 
 ## Usage
 
-In `main.ts`, import the necessary CSS file:
-
-```typescript
-import 'vue3-spinners/spinners.css';
-
-// ... your app initialization code goes here
-```
-
-Then, import the spinners in your Vue component:
+To use the spinners, import the ones you want to use in your Vue component:
 
 ```vue
 <script>
