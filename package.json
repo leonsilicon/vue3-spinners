@@ -2,17 +2,13 @@
 	"name": "@vue3-spinners/monorepo",
 	"private": true,
 	"scripts": {
-		"release": "pnpm --filter=vue3-spinners run release",
 		"prepare": "lion-git-hooks",
 		"build": "pnpm --filter=vue3-spinners run build",
 		"build:demo": "pnpm --filter=@vue3-spinners/demo run build",
-		"dev:demo": "pnpm --filter=@vue3-spinners/demo run dev",
-		"lint": "pnpm recursive run lint",
-		"prettier": "pnpm recursive run prettier",
-		"typecheck": "pnpm recursive run typecheck"
+		"dev:demo": "pnpm --filter=@vue3-spinners/demo run dev"
 	},
 	"devDependencies": {
-		"lionconfig": "^1.6.2",
+		"lionconfig": "^1.6.17",
 		"typescript": "^4.6.4"
 	}
 }

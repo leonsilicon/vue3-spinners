@@ -33,13 +33,8 @@
 	"homepage": "https://github.com/leonzalion/vue3-spinners#readme",
 	"exports": "./src/index.js",
 	"scripts": {
-		"release": "lionp",
 		"build": "node-ts ./scripts/build.ts",
-		"start": "node-ts ./src/index.ts",
-		"test": "vitest run",
-		"lint": "eslint --cache --fix .",
-		"prettier": "prettier --write .",
-		"typecheck": "tsc --noEmit"
+		"start": "node-ts ./src/index.ts"
 	},
 	"peerDependencies": {
 		"vue": "^3"
@@ -55,6 +50,7 @@
 	"devDependencies": {
 		"@types/colornames": "^1.1.2",
 		"@types/parse-unit": "^1.0.1",
+		"@types/style-inject": "^0.3.0",
 		"@vue/runtime-core": "^3.2.33",
 		"compile-vue-sfc": "^0.2.0",
 		"desm": "^1.2.0",

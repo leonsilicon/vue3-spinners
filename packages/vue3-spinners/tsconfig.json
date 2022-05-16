@@ -7,7 +7,7 @@
 			"~/*": ["./src/*"]
 		},
 		"jsx": "preserve",
-		"types": ["vue/ref-macros", "./typings/style-inject", "./typings/vue"]
+		"types": ["vue/ref-macros", "./typings/vue"]
 	},
 	"include": ["./src", "./typings"]
 }
