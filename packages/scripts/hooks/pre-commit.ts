@@ -1,3 +1,3 @@
-import { preCommit } from 'lion-system';
+import { preCommit } from 'lionconfig';
 
 preCommit();

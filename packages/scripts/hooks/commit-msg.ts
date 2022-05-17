@@ -1,3 +1,3 @@
-import { commitMsg } from 'lion-system';
+import { commitMsg } from 'lionconfig';
 
 commitMsg();

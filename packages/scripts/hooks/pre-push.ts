@@ -1,3 +1,3 @@
-import { prePush } from 'lion-system';
+import { prePush } from 'lionconfig';
 
 prePush();
