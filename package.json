@@ -8,6 +8,7 @@
 		"dev:demo": "pnpm --filter=@vue3-spinners/demo run dev"
 	},
 	"devDependencies": {
-		"typescript": "^4.6.4"
+		"typescript": "^4.6.4",
+		"lionconfig": "^1.7.27"
 	}
 }
