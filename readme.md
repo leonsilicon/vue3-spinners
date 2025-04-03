@@ -8,7 +8,7 @@ These components were exported from Quasar's spinner components (<https://quasar
 
 ## Online Demo
 
-To see all the spinners in action, press visit the following online demo: <https://leonzalion.github.io/vue3-spinners>
+To see all the spinners in action, press visit the following online demo: <https://leonsilicon.github.io/vue3-spinners>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/leonzalion/vue3-spinners/main/packages/assets/images/spinners.gif" />
