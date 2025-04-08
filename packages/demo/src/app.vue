@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import {
 	VueSpinner,
 	VueSpinnerAudio,
@@ -74,8 +75,8 @@ const quasarSpinners = [
 	VueSpinnerTail,
 ];
 
-const spinnerSize = $ref(40);
-const spinnerColor = $ref('black');
+const spinnerSize = ref(40);
+const spinnerColor = ref('black');
 </script>
 
 <template>
