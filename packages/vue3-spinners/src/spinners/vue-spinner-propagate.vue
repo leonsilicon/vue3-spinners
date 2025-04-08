@@ -6,8 +6,8 @@ export default { name: 'VueSpinnerPropagate' };
 import range from 'just-range';
 import type { CSSProperties } from 'vue';
 
-import { useSpinnerProps } from '~/utils/props.js';
-import { useSize } from '~/utils/size.js';
+import { useSpinnerProps } from '../utils/props.js';
+import { useSize } from '../utils/size.js';
 
 const { color, size: sizeProp } = defineProps(
 	useSpinnerProps({

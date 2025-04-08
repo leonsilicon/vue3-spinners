@@ -3,8 +3,8 @@ export default { name: 'VueSpinnerGridPop' };
 </script>
 
 <script setup lang="ts">
-import { useSpinnerProps } from '~/utils/props.js';
-import { useSize } from '~/utils/size.js';
+import { useSpinnerProps } from '../utils/props.js';
+import { useSize } from '../utils/size.js';
 
 const random = (top: number) => Math.random() * top;
 

@@ -1,6 +1,6 @@
 import type { Plugin } from 'vue';
 
-import * as spinnerComponents from '~/spinners/index.js';
+import * as spinnerComponents from '../spinners/index.js';
 
 export const VueSpinnersPlugin: Plugin = {
 	install(app) {

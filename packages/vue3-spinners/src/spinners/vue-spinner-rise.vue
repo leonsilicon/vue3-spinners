@@ -5,8 +5,8 @@ export default { name: 'VueSpinnerRise' };
 <script setup lang="ts">
 import range from 'just-range';
 
-import { useSpinnerProps } from '~/utils/props.js';
-import { useSize } from '~/utils/size.js';
+import { useSpinnerProps } from '../utils/props.js';
+import { useSize } from '../utils/size.js';
 
 const {
 	color,

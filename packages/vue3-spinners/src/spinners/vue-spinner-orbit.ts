@@ -1,6 +1,6 @@
 import { defineComponent, h } from 'vue';
 
-import useSpinner, { spinnerProps } from '~/utils/use-spinner.js';
+import useSpinner, { spinnerProps } from '../utils/use-spinner.js';
 
 const svg = [
 	h('circle', {

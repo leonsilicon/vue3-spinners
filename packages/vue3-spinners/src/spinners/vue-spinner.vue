@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent, h } from 'vue';
 
-import useSpinner, { spinnerProps } from '~/utils/use-spinner.js';
+import useSpinner, { spinnerProps } from '../utils/use-spinner.js';
 
 export default defineComponent({
 	name: 'VueSpinner',

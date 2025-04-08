@@ -1,6 +1,6 @@
 import { defineComponent, h } from 'vue';
 
-import useSpinner, { spinnerProps } from '~/utils/use-spinner.js';
+import useSpinner, { spinnerProps } from '../utils/use-spinner.js';
 
 const svg = [
 	h('g', [
@@ -87,12 +87,12 @@ const svg = [
 		),
 		h('path', {
 			d: 'M29,23c3.1,11.4,11.3,19.5,21,19.5S67.9,34.4,71,23H29z',
-			'clip-path': 'url(#uil-hourglass-clip1)',
+			'clip-path': 'url(../uil-hourglass-clip1)',
 			fill: 'currentColor',
 		}),
 		h('path', {
 			d: 'M71.6,78c-3-11.6-11.5-20-21.5-20s-18.5,8.4-21.5,20H71.6z',
-			'clip-path': 'url(#uil-hourglass-clip2)',
+			'clip-path': 'url(../uil-hourglass-clip2)',
 			fill: 'currentColor',
 		}),
 		h('animateTransform', {

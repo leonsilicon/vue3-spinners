@@ -5,8 +5,8 @@ export default { name: 'VueSpinnerFade' };
 <script setup lang="ts">
 import type { CSSProperties } from 'vue';
 
-import { useSpinnerProps } from '~/utils/props.js';
-import { useSize } from '~/utils/size.js';
+import { useSpinnerProps } from '../utils/props.js';
+import { useSize } from '../utils/size.js';
 
 const {
 	color,
