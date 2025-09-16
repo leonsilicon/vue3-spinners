@@ -1,5 +1,5 @@
 {
-	"extends": "lionconfig/tsconfig.json",
+	"extends": "@sindresorhus/tsconfig",
 	"compilerOptions": {
 		"types": ["vue/ref-macros"]
 	}

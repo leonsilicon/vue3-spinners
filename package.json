@@ -11,5 +11,8 @@
 	},
 	"workspaces": [
 		"packages/*"
-	]
+	],
+	"dependencies": {
+		"@sindresorhus/tsconfig": "^8.0.1"
+	}
 }
