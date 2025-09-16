@@ -36,7 +36,7 @@
 		"types": "./dist/index.d.ts"
 	},
 	"scripts": {
-		"build": "unbuild",
+		"build": "bun scripts/build.ts",
 		"start": "bun ./src/index.ts"
 	},
 	"peerDependencies": {

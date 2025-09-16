@@ -2,10 +2,6 @@ import { compileVueSFC } from 'compile-vue-sfc';
 import { join } from 'desm';
 import { execaCommandSync as exec } from 'execa';
 import { globbySync } from 'globby';
-import { chProjectDir, copyPackageFiles, rmDist } from 'lionconfig';
-
-chProjectDir(import.meta.url);
-rmDist();
 
 await compileVueSFC({
 	declarations: true,
@@ -15,5 +11,3 @@ await compileVueSFC({
 });
 
 exec('tsc');
-exec('tsc-alias');
-await copyPackageFiles({ commonjs: false });
