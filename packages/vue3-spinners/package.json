@@ -32,7 +32,7 @@
 	},
 	"homepage": "https://github.com/leonsilicon/vue3-spinners#readme",
 	"exports": {
-		"default": "./dist/index.mjs",
+		"default": "./dist/index.js",
 		"types": "./dist/index.d.ts"
 	},
 	"scripts": {
