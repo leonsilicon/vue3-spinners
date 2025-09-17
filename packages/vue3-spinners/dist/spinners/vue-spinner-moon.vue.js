@@ -65,6 +65,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var vueSpinnerMoon = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/leonzalion/projects/vue3-spinners/packages/vue3-spinners/src/spinners/vue-spinner-moon.vue"]]);
+var vueSpinnerMoon = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/leonsilicon/projects/vue3-spinners/packages/vue3-spinners/src/spinners/vue-spinner-moon.vue"]]);
 
 export { vueSpinnerMoon as default };

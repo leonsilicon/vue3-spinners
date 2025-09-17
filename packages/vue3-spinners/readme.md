@@ -11,7 +11,7 @@ These components were exported from Quasar's spinner components (<https://quasar
 To see all the spinners in action, press visit the following online demo: <https://leonsilicon.github.io/vue3-spinners>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/leonzalion/vue3-spinners/main/packages/assets/images/spinners.gif" />
+  <img src="https://raw.githubusercontent.com/leonsilicon/vue3-spinners/main/packages/assets/images/spinners.gif" />
 </p>
 
 ## Installation
@@ -85,7 +85,7 @@ All spinners accept a color property that sets the color of the spinner.
 
 ## Spinner-dependent Props
 
-Each spinner takes different properties whose effect depends on the spinner being used; please refer to the file for each spinner to find out which properties it accepts (which is indicated by the destructuring of the `defineProps` function): <https://github.com/leonzalion/vue3-spinners/tree/main/packages/vue3-spinners/src/spinners>
+Each spinner takes different properties whose effect depends on the spinner being used; please refer to the file for each spinner to find out which properties it accepts (which is indicated by the destructuring of the `defineProps` function): <https://github.com/leonsilicon/vue3-spinners/tree/main/packages/vue3-spinners/src/spinners>
 
 Example:
 

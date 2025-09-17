@@ -52,6 +52,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var vueSpinnerBounce = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/leonzalion/projects/vue3-spinners/packages/vue3-spinners/src/spinners/vue-spinner-bounce.vue"]]);
+var vueSpinnerBounce = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/leonsilicon/projects/vue3-spinners/packages/vue3-spinners/src/spinners/vue-spinner-bounce.vue"]]);
 
 export { vueSpinnerBounce as default };

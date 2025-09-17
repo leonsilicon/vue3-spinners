@@ -38,6 +38,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var vueSpinnerSkew = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/leonzalion/projects/vue3-spinners/packages/vue3-spinners/src/spinners/vue-spinner-skew.vue"]]);
+var vueSpinnerSkew = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/leonsilicon/projects/vue3-spinners/packages/vue3-spinners/src/spinners/vue-spinner-skew.vue"]]);
 
 export { vueSpinnerSkew as default };

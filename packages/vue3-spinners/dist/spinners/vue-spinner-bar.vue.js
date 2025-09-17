@@ -57,6 +57,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var vueSpinnerBar = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/leonzalion/projects/vue3-spinners/packages/vue3-spinners/src/spinners/vue-spinner-bar.vue"]]);
+var vueSpinnerBar = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/leonsilicon/projects/vue3-spinners/packages/vue3-spinners/src/spinners/vue-spinner-bar.vue"]]);
 
 export { vueSpinnerBar as default };
